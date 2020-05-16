@@ -1,0 +1,27 @@
+#socialIcons i {
+  margin-left: -2px;
+}
+
+#firstNav {
+  background: #333;
+}
+
+#firstNav a {
+  color: white;
+}
+
+.fa.fa-search {
+  font-size: 30px;
+  margin-left: 5px;
+  padding: 8px;
+}
+
+#searchInput {
+  width: 450px;
+  border-radius: 20px;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
