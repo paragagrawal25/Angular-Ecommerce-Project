@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
-import { ProfileComponent } from './components/profile/profile.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ProductsComponent } from './components/products/products.component';
 import { PaymentComponent } from './components/payment/payment.component';
@@ -23,19 +22,31 @@ import { OrderComponent } from './components/order/order.component';
 import { CartComponent } from './components/cart/cart.component';
 import { SearchProductComponent } from './components/search-product/search-product.component';
 import { ProductsByCategoryComponent } from './components/products-by-category/products-by-category.component';
+import {ProfilePageComponent} from './components/profile-page/profile-page.component';
+import {OrdersComponent} from "./components/profile-page/orders/orders.component";
+import {ProfileComponent} from "./components/profile-page/profile/profile.component";
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'welcome/:name', component: HomePageComponent }
+  { path: 'home-page', component: HomePageComponent },
+  { path: 'profile', component: ProfilePageComponent},
+  { path: 'cart', component: CartComponent},
+  { path: 'checkout', component: CheckOutComponent},
+  { path: 'my-orders/:username', component: OrderComponent},
+  { path: 'product-details', component: ProductDetailsComponent},
+  { path: 'products', component: ProductsComponent},
+  { path: 'products-by-category/:categoryId', component: ProductsByCategoryComponent},
+  { path: 'search-products/:searchKeyword', component: SearchProductComponent},
+  { path: 'about-us', component: AboutUsComponent},
+  { path: 'orders', component: OrdersComponent}
+  /*{ path: '/!**', component: HomePageComponent}*/
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
-    ProfileComponent,
     AboutUsComponent,
     ProductsComponent,
     PaymentComponent,
@@ -49,7 +60,10 @@ const routes: Routes = [
     OrderComponent,
     CartComponent,
     SearchProductComponent,
-    ProductsByCategoryComponent
+    ProductsByCategoryComponent,
+    ProfilePageComponent,
+    OrdersComponent,
+    ProfileComponent
   ],
     imports: [
         BrowserModule,

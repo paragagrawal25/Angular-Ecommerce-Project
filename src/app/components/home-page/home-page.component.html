@@ -1,1 +1,108 @@
-<p>Welcome Back {{ userName }}</p>
+<app-header></app-header>
+<div class="simple-slider">
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"
+           style="background-image: url(&quot;assets/img/ashkan-forouzani-sUlR4Iul-9c-unsplash.jpg&quot;);"></div>
+      <div class="swiper-slide"
+           style="background-image: url(&quot;assets/img/christin-hume-k2Kcwkandwg-unsplash.jpg&quot;);width: 1272px;"></div>
+      <div class="swiper-slide"
+           style="background-image: url(&quot;assets/img/onne-beauty-6cGnT43v7PE-unsplash.jpg&quot;);width: 1298px;height: 507px;"></div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+</div>
+<div class="container">
+  <div class="intro">
+    <h2 class="text-center" style="font-family: 'Playfair Display', serif;font-size: 53px;color: rgb(7,7,7);">Shop by
+      Category</h2>
+  </div>
+</div>
+<div>
+  <div class="container">
+    <div class="row" id="category">
+      <div class="col-md-4" id="categoryColumn"><a href="#"><img
+        src="assets/img/top-view-photo-of-laptop-near-camera-3178938.jpg"></a>
+        <a data-bs-hover-animate="pulse" id="textlink" routerLink="/products-by-category/:categoryId"
+           style="margin-left: 79px;">Electronics</a>
+      </div>
+      <div class="col-md-4"><a href="#"><img
+        src="assets/img/Creative-Couple-Fashion-Photography-Outfits-Ideas-to-Make-Best-Photoshoot_30.jpg"></a><a
+        data-bs-hover-animate="pulse" id="textlink" routerLink="/products-by-category/:categoryId"
+        style="margin-left: 99px;">Clothing</a></div>
+      <div class="col-md-4"><a href="#"><img src="assets/img/person-holding-brown-ceramic-coffee-mug-824197.jpg"></a><a
+        id="textlink" routerLink="/products-by-category/:categoryId" style="margin-left: 120px;">Books&nbsp;&nbsp;</a></div>
+    </div>
+  </div>
+</div>
+<section id="filtr-gallery">
+  <section id="filtr-gallery">
+    <div class="container">
+      <h2 class="text-center" style="font-family: 'Playfair Display', serif;font-size: 53px;color: rgb(7,7,7);">New
+        Arrivals</h2>
+      <div class="filtr-controls"><span class="active" data-filter="all">all </span><span
+        data-filter="1">Electronics</span><span data-filter="2">clothing</span><span data-filter="3">Books</span></div>
+      <div class="row filtr-container">
+        <div class="col -6 col-sm-4 col-md-3 filtr-item" data-category="2"><a href="assets/img/product2.png"><img
+          class="img-fluid" data-caption="<strong>Image description</strong><br><em>Lorem ipsum</em>"
+          src="assets/img/product2.png" alt="image"></a></div>
+        <div class="col -6 col-sm-4 col-md-3 filtr-item" data-category="3"><a href="assets/img/alchemist.jpg"><img
+          class="img-fluid" data-caption="<strong>Image description</strong><br><em>Lorem ipsum</em>"
+          src="assets/img/alchemist.jpg" alt="image"></a></div>
+        <div class="col-6 col-sm-4 col-md-3 filtr-item" data-category="1"><a href="assets/img/camera.jpg"><img
+          class="img-fluid" data-caption="<strong>Image description</strong><br><em>Lorem ipsum</em>"
+          src="assets/img/camera.jpg" alt="image"></a></div>
+        <div class="col-6 col-sm-4 col-md-3 filtr-item" data-category="3"><a href="assets/img/The-Kite-Runner.jpg"><img
+          class="img-fluid" src="assets/img/The-Kite-Runner.jpg" alt="image"></a></div>
+        <div class="col-6 col-sm-4 col-md-3 filtr-item" data-category="1"><a href="assets/img/headphone.jpg"><img
+          class="img-fluid" src="assets/img/headphone.jpg" alt="image"></a></div>
+        <div class="col-6 col-sm-4 col-md-3 filtr-item" data-category="1"><a href="assets/img/speaker.jpg"><img
+          class="img-fluid" src="assets/img/speaker.jpg" alt="image"></a></div>
+        <div class="col-6 col-sm-4 col-md-3 filtr-item" data-category="2"><a href="assets/img/product3.png"><img
+          class="img-fluid" src="assets/img/product3.png" alt="image"></a></div>
+        <div class="col-6 col-sm-4 col-md-3 filtr-item" data-category="2"><a href="assets/img/product4.png"><img
+          class="img-fluid" src="assets/img/product4.png" alt="image"></a></div>
+        <div class="col-6 col-sm-4 col-md-3 filtr-item" data-category="3"><a href="assets/img/book3.jpg"><img
+          class="img-fluid" src="assets/img/book3.jpg" alt="image"></a></div>
+        <div class="col-6 col-sm-4 col-md-3 filtr-item" data-category="2"><a href="assets/img/product6.png"><img
+          class="img-fluid" src="assets/img/product6.png" alt="image"></a></div>
+        <div class="col-6 col-sm-4 col-md-3 filtr-item" data-category="3"><a href="assets/img/book4.jpg"><img
+          class="img-fluid" src="assets/img/book4.jpg" alt="image"></a></div>
+        <div class="col-6 col-sm-4 col-md-3 filtr-item" data-category="1"><a href="assets/img/mobile1.png"><img
+          class="img-fluid" src="assets/img/mobile1.png" alt="image"></a></div>
+      </div>
+    </div>
+  </section>
+  <div class="intro"></div>
+</section>
+<div class="features-clean">
+  <div class="container">
+    <div class="intro" style="margin-bottom: 15px;">
+      <h2 class="text-center">Why Choose Us?</h2>
+    </div>
+    <div class="row features" id="whyus" style="margin-bottom: 10px;">
+      <div class="col-sm-6 col-lg-4 item" style="margin-bottom: 22px;"><i class="fa fa-plane icon"></i>
+        <h3 class="name">Free Shipping</h3>
+      </div>
+      <hr style="opacity: 0.69;">
+      <div class="col-sm-6 col-lg-4 item"><i class="fa fa-clock-o icon"></i>
+        <h3 class="name">Always available</h3>
+      </div>
+      <div class="col-sm-6 col-lg-4 item"><i class="fa fa-list-alt icon"></i>
+        <h3 class="name">Secure Payment Method</h3>
+      </div>
+      <div class="col-sm-6 col-lg-4 item"><i class="fa fa-rupee icon"></i>
+        <h3 class="name">Cash On Delivery</h3>
+      </div>
+      <div class="col-sm-6 col-lg-4 item"><i class="fa fa-refresh icon"></i>
+        <h3 class="name">Easy Returns</h3>
+      </div>
+      <div class="col-sm-6 col-lg-4 item"><i class="fas fa-check-circle icon"></i>
+        <h3 class="name">Assured Quality</h3>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

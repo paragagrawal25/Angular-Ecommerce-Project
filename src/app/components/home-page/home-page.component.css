@@ -1,0 +1,11 @@
+#textlink {
+  font-family: 'Playfair Display';
+  color: rgb(14,14,14);
+  font-size: 35px;
+  margin-left: 84px;
+}
+
+#textlink:hover {
+  font-size: 40px;
+  text-decoration: none;
+}

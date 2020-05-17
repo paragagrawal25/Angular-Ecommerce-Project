@@ -1,6 +1,7 @@
 .footer-basic {
+  background: linear-gradient(to right, #D3CCE3, #fffcdc);
   padding: 40px 0;
-  background-color: #ffffff;
+  /*background-color: #ffffff;*/
   color: #4b4c4d;
 }
 
@@ -56,5 +57,10 @@
   font-size: 13px;
   color: #aaa;
   margin-bottom: 0;
+}
+
+#elctronicsImage {
+  width: 200px;
+  height: 350px;
 }
 

@@ -1,1 +1,75 @@
-<p>header works!</p>
+<nav class="navbar navbar-light navbar-expand-md" id="firstNav">
+  <div class="container-fluid"><a class="navbar-brand" href="/home-page" style="font-size: 38px;"><img
+    src="assets/img/EzeeShop.png" style="width: 160px;"></a>
+    <button class="navbar-toggler" data-target="#navcol-1" data-toggle="collapse" style="background-color: white"><span
+      class="sr-only" id="toggler" style="background-color: #222222;">Toggle navigation</span><span
+      class="navbar-toggler-icon"></span></button>
+    <div
+      class="collapse navbar-collapse" id="navcol-1" style="width: 623px;">
+      <form class="form-inline mx-auto" id="serachBar"><input class="form-control" id="searchInput"
+                                                              placeholder="  Search Products" style="opacity: 0.87;"
+                                                              type="search"><a routerLink="/search-products"><i
+        class="fa fa-search" data-bs-hover-animate="pulse"></i></a></form>
+      <ul class="nav navbar-nav ml-auto"
+          style="margin-left: 266px;font-size: 18px;">
+        <li class="nav-item" role="presentation"><a class="nav-link active" data-bs-hover-animate="pulse"
+                                                    routerLink="/profile">My Account</a></li>
+        <li class="nav-item" role="presentation"><a class="nav-link active" data-bs-hover-animate="pulse"
+                                                    routerLink="/my-orders/:username">Wish List</a></li>
+        <li class="nav-item" role="presentation"></li>
+        <li class="nav-item" role="presentation"><a class="nav-link active" data-bs-hover-animate="pulse"
+                                                    routerLink="/my-orders/:username">My Orders</a></li>
+        <li class="nav-item" role="presentation"><a class="nav-link active" data-bs-hover-animate="pulse"
+                                                    routerLink="/checkout">Checkout</a></li>
+      </ul>
+      <ul class="nav navbar-nav">
+        <li class="nav-item" role="presentation"></li>
+        <li class="nav-item" role="presentation"></li>
+        <li class="nav-item" role="presentation"></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<nav class="navbar navbar-light navbar-expand-md" id="secondnav"
+     style="padding-bottom: 8px;background-color: rgba(255,255,255,0.27);">
+  <div class="container-fluid"><a class="navbar-brand" href="/home-page"
+                                  style="font-size: 38px;font-family: 'Playfair Display', serif;"><strong>EzeeShop</strong></a>
+    <button class="navbar-toggler" data-target="#navcol-2" data-toggle="collapse"><span class="sr-only">Toggle navigation</span><span
+      class="navbar-toggler-icon"></span></button>
+    <div
+      class="collapse navbar-collapse" id="navcol-2" style="width: 623px;">
+      <ul class="nav navbar-nav mx-auto" style="margin-left: 266px;font-size: 22px;color: #1f2021;">
+        <li class="nav-item" role="presentation"><a class="nav-link active" data-bs-hover-animate="pulse"
+                                                    href="/home-page">Home</a></li>
+        <li class="nav-item" role="presentation"><a class="nav-link active" data-bs-hover-animate="pulse"
+                                                    routerLink="/products">All Products</a></li>
+        <li class="nav-item" role="presentation"></li>
+        <li class="nav-item dropdown"><a aria-expanded="false" class="dropdown-toggle nav-link"
+                                         data-bs-hover-animate="pulse" data-toggle="dropdown" style="color: #000000;">Clothing</a>
+          <div class="dropdown-menu" role="menu"><a class="dropdown-item" routerLink="/search-products"
+                                                    role="presentation">Men's Section</a><a class="dropdown-item"
+                                                                                            routerLink="/search-products"
+                                                                                            role="presentation">Women's
+            Section</a></div>
+        </li>
+        <li class="nav-item" role="presentation"><a class="nav-link active" data-bs-hover-animate="pulse"
+                                                    routerLink="/about-us">About Us</a></li>
+      </ul>
+      <ul class="nav navbar-nav">
+        <li class="nav-item" role="presentation"><a class="nav-link active" data-bs-hover-animate="pulse"
+                                                    routerLink="/cart" id="cart"><i class="fas fa-shopping-bag"></i><span
+          class="badge badge-pill badge-primary float-right" id="cartBadge"
+          style="margin-top: 0px;height: 20px;padding: 4px;margin-left: -6px;opacity: 0.84;">2</span></a></li>
+        <li
+          class="nav-item" role="presentation"></li>
+        <li class="nav-item" role="presentation"></li>
+        <li class="nav-item" role="presentation"><a class="nav-link" routerLink="/login" id="signIn">
+          <button class="btn btn-primary" data-bs-hover-animate="pulse" style="background-color: rgb(81,94,207);"
+                  type="button">Sign In
+          </button>
+        </a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<hr style="opacity: 0.69;">

@@ -7,9 +7,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
 
-  constructor() { }
+  /*objCart: Cart;
+  objProduct: Product;*/
 
-  ngOnInit(): void {
+  constructor() {
   }
 
+  ngOnInit(): void {
+    // this.listCart();
+  }
 }
+  // listCart() {
+  //  this.objCart = this.cartService.getCartByName("muz7u");
+ // }
+  // reloadData() {
+   /*this.cartService.getCartByName('muz7u').subscribe(data => {this.objCart = data; });
+  }
+
+  listCart() {
+    // const theProductId: number = +this.route.snapshot.paramMap.get('id');
+    this.cartService.getCartByName('muz7u').subscribe(data => {
+      this.objCart = data;
+          });
+  }*/
+
