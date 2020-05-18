@@ -1,0 +1,26 @@
+#firstNav {
+  background: black;
+}
+
+#firstNav a {
+  color: white;
+}
+
+.fa.fa-search {
+  font-size: 30px;
+  margin-left: 5px;
+  padding: 8px;
+}
+
+#searchInput {
+  width: 450px;
+  border-radius: 20px;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+#secondnav {
+  background: linear-gradient(to right, #ECE9E6, #fffcdc);
+}

@@ -9,6 +9,7 @@ body {
 
 .contact-form {
   margin: 0 auto;
+
   width: 75%;
   max-width: 420px;
   background: #f1f1f1;
@@ -68,6 +69,7 @@ body {
 
 .contact-info {
   display: flex;
+
   width: 100%;
   max-width: 1200px;
   align-items: bottom;
@@ -81,6 +83,7 @@ body {
   background: #2f3542;
   padding: 0 20px;
   margin: 0 10px;
+  width: calc(33% - 20px);
   height: 100px;
   display: flex;
   flex-direction: column;

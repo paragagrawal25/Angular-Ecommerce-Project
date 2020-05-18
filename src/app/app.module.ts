@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
@@ -23,8 +24,8 @@ import { CartComponent } from './components/cart/cart.component';
 import { SearchProductComponent } from './components/search-product/search-product.component';
 import { ProductsByCategoryComponent } from './components/products-by-category/products-by-category.component';
 import {ProfilePageComponent} from './components/profile-page/profile-page.component';
-import {OrdersComponent} from "./components/profile-page/orders/orders.component";
-import {ProfileComponent} from "./components/profile-page/profile/profile.component";
+import {OrdersComponent} from './components/profile-page/orders/orders.component';
+import {ProfileComponent} from './components/profile-page/profile/profile.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -65,14 +66,15 @@ const routes: Routes = [
     OrdersComponent,
     ProfileComponent
   ],
-    imports: [
-        BrowserModule,
-        NoopAnimationsModule,
-        MatSelectModule,
-        MatInputModule,
-        RouterModule.forRoot(routes),
-        FormsModule
-    ],
+  imports: [
+    BrowserModule,
+    NoopAnimationsModule,
+    MatSelectModule,
+    MatInputModule,
+    RouterModule.forRoot(routes),
+    FormsModule,
+    HttpClientModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
