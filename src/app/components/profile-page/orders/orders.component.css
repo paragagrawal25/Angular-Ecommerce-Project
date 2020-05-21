@@ -1,0 +1,19 @@
+
+.block_heading{
+    font-size: 40px;
+    font-weight: 400;
+}
+
+.order_cards{
+    margin-top: 20px;
+}
+
+.card_heading{
+    font-size: 20px;
+    font-weight: 480;
+}
+
+.view_order{
+    font-size: 20px;
+    color: #28A745;
+}

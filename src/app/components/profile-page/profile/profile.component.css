@@ -1,0 +1,28 @@
+.block_heading{
+    font-size: 40px;
+    font-weight: 400;
+}
+
+.label{
+    color: indianred;
+    font-size: 30px;
+    font-weight: 540;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.text-box{
+    border-color: indianred;
+    border-style: dashed;
+    border-radius: 13px;
+    color: orange;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.file-box{
+    border-color: indianred;
+    border-style: dashed;
+    border-radius: 13px;
+    color: orange;
+    font-weight: 500;
+}

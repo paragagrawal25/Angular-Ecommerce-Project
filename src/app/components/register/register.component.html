@@ -1,0 +1,71 @@
+<div class="register-photo" style="font-family: Montserrat, sans-serif;">
+  <div class="form-container" style="height: 570px;">
+    <div class="image-holder"></div>
+    <form (ngSubmit)="onSubmit()"> <!--[formGroup]="form" (ngSubmit)="submit()"-->
+      <h2 class="text-center"><strong>Create</strong> an account.</h2>
+      <div class="form-group">
+        <input class="form-control" type="text" name="full-name" placeholder="Full Name" id="full-name" required
+               [(ngModel)]="customer.customerName" #fullName="ngModel">
+        <div *ngIf="fullName.invalid && (fullName.dirty || fullName.touched)" class="text-danger">
+          <small *ngIf="fullName.errors.required">Name is required</small>
+        </div>
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="email" name="email" placeholder="Email (Eg. john@gmail.com)"
+               required="" [(ngModel)]="customer.userName">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="password" name="password" placeholder="Password"
+               required="" [(ngModel)]="customer.customerPassword">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="password" name="password-repeat" placeholder="Confirm Password"
+               required="" [(ngModel)]="customer.customerPassword">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="tel" name="contact-number" placeholder="Contact Number"
+               required minlength="10" maxLength="10" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" data-toggle="tooltip"
+               title="Mobile Number should be at least of 10 characters." [(ngModel)]="customer.customerMobileNo">
+        <!--<div *ngIf="f.contactNumber.touched && f.contactNumber.invalid" class="alert alert-danger">
+          <div *ngIf="f.contactNumber.errors.pattern"> Please, Enter 10 digit mobile number. </div>
+        </div>-->
+      </div>
+      <div class="form-group">
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox">I agree to the license terms.
+          </label>
+        </div>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary btn-block" type="submit">Sign Up</button>
+      </div>
+      <a class="already" routerLink="/login" routerLinkActive="active">You already have an account? Login here.</a>
+    </form>
+  </div>
+</div>
+
+<!--
+<div class="bg">
+  <div class="register-form">
+    <div class="button-box">
+      <div id="btn"></div>
+      <button type="button" class="toggle-btn">Log In</button>
+      <button type="button" class="toggle-btn">Register</button>
+    </div>
+    <form id="login" class="input-group1">
+      <input type="text" class="input-field" placeholder="User Id" required>
+      <input type="password" class="input-field" placeholder="Password" required>
+      <input type="checkbox" class="check-box"><span>Remember Password</span>
+      <button type="submit" class="submit-btn">Log In</button>
+    </form>
+    <form id="register" class="input-group1">
+      <input type="text" class="input-field" placeholder="User Id" required>
+      <input type="email" class="input-field" placeholder="Email Id" required>
+      <input type="password" class="input-field" placeholder="Password" required>
+      <input type="checkbox" class="check-box"><span>I agree to terms & conditions</span>
+      <button type="submit" class="submit-btn">Sign Up</button>
+    </form>
+  </div>
+</div>
+-->

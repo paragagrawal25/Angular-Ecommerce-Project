@@ -1,0 +1,24 @@
+.cards{
+    height: 150px;
+}
+
+.cards_info{
+    height: 362px;
+}
+.cards h5{
+    color: rgb(107, 107, 102);
+}
+
+.cards span{
+    color: white;
+    font-size: 14px;
+}
+
+.cards h4{
+    margin-top: 10px;
+}
+
+.labels{
+    font-weight: 200;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

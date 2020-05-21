@@ -1,0 +1,80 @@
+<div class="col-md-12" style="margin-top: 50px;">
+
+    <h6 class="display-4 block_heading">Profile</h6>
+
+    <div class="row mt-3">
+
+        <div class="col-md-9" style="background-color: #F8F9FA;">
+
+            <form class="mt-2" (ngSubmit)="onSubmit()">
+
+                <div class="form-group">
+                    <label for="customerName">Name</label>
+                    <input type="text" id="customerName" class="form-control" placeholder="Enter name" required=""
+                           [(ngModel)]="customer.customerName" name="customerName">
+                    <small class="form-text text-muted">Please enter your good name.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="mobileNo">Mobile Number</label>
+                    <input type="tel" class="form-control" id="mobileNo"  placeholder="Phone Number" required=""
+                           [(ngModel)]="customer.customerMobileNo" name="mobileNo">
+                    <small class="form-text text-muted">Please enter a valid mobile number.</small>
+                </div>
+
+                <div class="form-group">
+                  <label for="emailID">Email address</label>
+                  <input type="email" class="form-control" id="emailID" placeholder="Enter email" required=""
+                         [(ngModel)]="customer.userName" name="emailID">
+                  <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+
+                <div class="form-group">
+                    <label>Address Line 1</label>
+                    <input type="text" class="form-control" value="H.No. M-96, dsdmms, dbajss" placeholder="Enter Address 1" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Address Line 2 (Optional)</label>
+                    <input type="text" class="form-control" placeholder="Enter Address 2 (Optional)">
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                        <label>State</label>
+                        <select class="custom-select" (click)="displayState($event)">
+                            <option value="Odisha" selected>Odisha</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Kerala">Kerala</option>
+                        </select>
+                        </div>
+
+                        <div class="col-md-6">
+                        <label>City</label>
+                        <select class="custom-select" (click)="displayCity($event)">
+                            <option value="{{city}}" *ngFor="let city of cities">{{city}}</option>
+                        </select>
+                        </div>
+
+                        <div class="input-group mt-4" style="width: 100%;">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text">Upload</span>
+                            </div>
+                            <div class="custom-file">
+                              <input type="file" class="custom-file-input">
+                              <label class="custom-file-label">Choose file</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+</div>

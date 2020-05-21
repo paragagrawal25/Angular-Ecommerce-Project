@@ -1,0 +1,68 @@
+.header{
+    /* background-color: #101820FF; */
+    background-color: #3C406A;
+}
+
+.navbar_styling{
+    height: 75px;
+}
+
+.logo{
+    color: seashell;
+    font-weight: bolder;
+    font-size: 30px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.list_items{
+    font-weight: 600;
+    font-size: 20px;
+    margin-right: 30px;
+}
+
+.list_items a{
+    color: seashell;
+    font-family: 'Oswald', sans-serif;
+}
+
+.cart_button{
+    margin-top: 5px;
+    width: 100px;
+    height: auto;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.name_area{
+    background-color: #3C406A;
+    height: 250px;   
+}
+
+.name_area h5{
+    color: seashell;
+    font-weight: 300;
+    padding-top: 40px;
+    padding-left: 10px;
+}
+
+.name_area p{
+    color: seashell;
+    font-weight: bolder;
+    padding-left: 10px;
+}
+
+.name_area button{
+    margin-top: 70px;
+    margin-right: 35px;
+    width: 150px;
+    height: auto;
+    font-weight: bold;
+}
+
+.list_options{
+    margin-left: 50px;
+    width: 250px;
+    /* background-color: #EFEFEF; */
+    font-weight: 500;
+    color: gray;
+}

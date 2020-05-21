@@ -1,0 +1,277 @@
+<div class="container-fluid mt-3" style="background-color: #F5F9FC; padding-bottom: 10px;">
+    
+    <div class="header">
+        <h5 class="display-4" style="font-size: xx-large; font-weight: 400;">Welcome Back, Admin</h5>
+    </div>
+
+
+    <!-- CARDS -->
+    <div class="container-fluid">
+
+        <div class="row">
+            
+            <div class="col-md-3">
+
+                <div class="card border-white border-shadow mt-4 cards">
+                    <div class="card-body">
+                      
+                        <div class="row">
+                            <div class="col-md-6 text-left">
+                                <h5>Income</h5>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <span class="badge badge-info">Today</span>
+                            </div> 
+                        </div>
+
+                        <h4>Rs 40,000/-</h4>
+
+                        <div class="progress mt-4">
+                            <div class="progress-bar bg-info progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <div class="col-md-3">
+
+                <div class="card border-white border-shadow mt-4 cards">
+                    <div class="card-body">
+                      
+                        <div class="row">
+                            <div class="col-md-6 text-left">
+                                <h5>Orders</h5>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <span class="badge badge-warning">Annual</span>
+                            </div> 
+                        </div>
+
+                        <h4>75</h4>
+
+                        <div class="progress mt-4">
+                            <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="col-md-3">
+
+                <div class="card border-white border-shadow mt-4 cards">
+                    <div class="card-body">
+                      
+                        <div class="row">
+                            <div class="col-md-6 text-left">
+                                <h5>Products</h5>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <span class="badge badge-success">Today</span>
+                            </div> 
+                        </div>
+
+                        <h4>1441</h4>
+
+                        <div class="progress mt-4">
+                            <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="col-md-3">
+
+                <div class="card border-white border-shadow mt-4 cards">
+                    <div class="card-body">
+                      
+                        <div class="row">
+                            <div class="col-md-6 text-left">
+                                <h5>Revenue</h5>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <span class="badge badge-danger">Yearly</span>
+                            </div> 
+                        </div>
+
+                        <h4>Rs 1,98,781/-</h4>
+
+                        <div class="progress mt-4">
+                            <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        
+    </div>
+
+
+    <!-- Information Part -->
+    <div class="container-fluid mt-3">
+        
+
+        <div class="row">
+
+            <!-- ADD PRODUCT -->
+            <div class="col-md-4">
+                
+                <div class="card border-white border-shadow mt-4 cards cards_info">
+                    <div class="card-body">
+                      
+                        <div class="row">
+                            <div class="col-md-6 text-left">
+                                <h5>Add New Product</h5>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <span class="badge badge-success">Add</span>
+                            </div> 
+                        </div>
+
+                        <div class="form-group mt-2 mb-3">
+                            <label class="labels">Product Name</label>
+                            <input type="text" class="form-control" placeholder="Enter Product Name">
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label class="labels">Quantity</label>
+                            <input type="text" class="form-control" placeholder="Enter Quantity">
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label class="labels">Category</label>
+                            <input type="text" class="form-control" placeholder="Enter Product Category">
+                        </div>
+
+                        <div class="form-group mb-3 text-center">
+                            <button type="button" class="btn btn-warning">Add Product</button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- DISPLAY ALL THE PRODUCTS -->
+            <div class="col-md-4">
+                
+                <div class="card border-white border-shadow mt-4 cards cards_info">
+                    <div class="card-body">
+                        
+                        <div class="row">
+                            <div class="col-md-6 text-left">
+                                <h5>Remove Product</h5>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <span class="badge badge-danger">Remove</span>
+                            </div> 
+                        </div>
+
+                        <table class="table mt-4">
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Product Name</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Remove</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">1</th>
+                                <td>Coffee Mug</td>
+                                <td>14</td>
+                                <td><button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
+                              </tr>
+                              <tr>
+                                <th scope="row">2</th>
+                                <td>T-Shirt</td>
+                                <td>25</td>
+                                <td><button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
+                              </tr>
+                              <tr>
+                                <th scope="row">3</th>
+                                <td>Jeans</td>
+                                <td>23</td>
+                                <td><button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
+                              </tr>
+                            </tbody>
+                          </table>
+
+                    </div>    
+                </div>
+
+            </div>
+
+            
+
+            <!-- DISPLAY ALL ORDERS -->
+            <div class="col-md-4">
+                
+                <div class="card border-white border-shadow mt-4 cards cards_info">
+                    <div class="card-body">
+                        
+                        <div class="row">
+                            <div class="col-md-6 text-left">
+                                <h5>All Orders</h5>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <span class="badge badge-primary">Orders</span>
+                            </div> 
+                        </div>
+
+                        <table class="table mt-4">
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Order Id</th>
+                                <th scope="col">Status</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">1</th>
+                                <td>Ankit Choudhary</td>
+                                <td>14234</td>
+                                <td><span class="badge badge-success">Delivered</span></td>
+                              </tr>
+                              <tr>
+                                <th scope="row">2</th>
+                                <td>Parag Agarwal</td>
+                                <td>15334</td>
+                                <td><span class="badge badge-warning">In Progress</span></td>
+                              </tr>
+                              <tr>
+                                <th scope="row">3</th>
+                                <td>Shubham Singh</td>
+                                <td>16745</td>
+                                <td><span class="badge badge-danger">Canceled</span></td>
+                              </tr>
+                            </tbody>
+                          </table>
+
+                    </div>    
+                </div>
+
+            </div>
+            
+
+        </div>
+
+    </div>
+
+</div>
