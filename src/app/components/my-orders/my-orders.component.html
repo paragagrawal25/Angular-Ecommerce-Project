@@ -1,0 +1,69 @@
+<app-header></app-header>
+
+<div class="container-fluid" style="background-color: #F2F3F7">
+  <div class="container" style="padding-top: 30px;">
+
+    <div class="card header_card">
+      <div class="card-body">
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <h5>Delivery Address</h5>
+
+            <p class="name">{{ orderArr[0].customerUserName }}</p>
+            <!--<p class="name">{{ objCustomer.name }}</p>-->
+
+            <p class="address">{{ orderArr[0].address.addressLine1}}<br>
+              {{ orderArr[0].address.addressLine2 }}</p>
+
+            <span class="name">Phone No.</span><br>
+            <!---<span class="address">{{ objOrder[0].address.phoneNo }}</span>-->
+            <span class="address">9501093335</span>
+
+          </div>
+
+          <div class="col-md-6 text-right">
+            <img class="header-gif" src="https://media.giphy.com/media/3oEjI4MMUuv9TZwXCM/giphy.gif" alt="gif">
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!--  Orders-->
+  <div class="container" style="padding-top: 30px">
+    <div class="card product_card" *ngFor="let tempOrder of orderArr">
+      <div *ngFor="let tempProduct of tempOrder.product">
+          <div class="row">
+
+          <div class="col-md-1 text-right" >
+            <img class="product-image" src="https://rukminim1.flixcart.com/image/416/416/jzsqky80/perfume/a/n/d/100-forest-spice-100ml-eau-de-parfume-for-men-eau-de-parfum-wild-original-imafjqhu7qzqrubg.jpeg?q=70">
+            <!--<img class="product-image" src="{{  }}>-->
+          </div>
+
+          <div class="col-md-3">
+
+            <span class="product-name" style="font-weight: bold">{{ tempProduct.productName }}</span>
+
+            <h5 style="padding-top: 30px; font-weight: bold">{{ tempProduct.productPrice | currency: 'INR' }}</h5>
+          </div>
+
+          <div class="col-md-8 text-center">
+
+            <span class="badge badge-success status">{{ tempOrder.orderStatus}} on {{ tempOrder.orderDate }}</span>
+          </div>
+
+          </div>
+        </div>
+
+    </div>
+  </div>
+
+</div>
+
+<app-footer></app-footer>

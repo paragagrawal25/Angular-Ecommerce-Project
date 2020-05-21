@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
-import {AuthenticateService} from './services/authenticate.service';
+import {User} from './classes/user';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +9,6 @@ import {AuthenticateService} from './services/authenticate.service';
 })
 export class AppComponent {
   title = 'apna-ecommerce-app';
-
-  authenticateService: AuthenticateService;
 
   /*emailFormControl = new FormControl('', [
     Validators.required,

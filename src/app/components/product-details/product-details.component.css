@@ -1,0 +1,62 @@
+/*.product_name{*/
+/*  font-size: 65px;*/
+/*}*/
+
+/*.product_desc{*/
+/*  font-size: 20px;*/
+/*}*/
+
+/*.pro_price{*/
+/*  margin-top: 17px;*/
+/*  font-size: 30px;*/
+/*  font-weight: 500;*/
+/*}*/
+
+/*.buyNow{*/
+/*  border-radius: 15px;*/
+/*  width: 150px;*/
+/*}*/
+/*.image_size{*/
+/*  height: 60%;*/
+/*  padding-top: 70px;*/
+/*}*/
+
+
+
+
+
+/* PARAG'S DESIGN */
+.proImage{
+  height: 500px;
+}
+
+.checked{
+  color: #1266F1;
+  border-color: red;
+}
+
+.priceTag{
+  font-size: 25px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.proDesc{
+  font-size: 17px;
+}
+
+.quantity{
+  width: 50px;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  border-top-right-radius: unset ;
+  border-bottom-right-radius: unset ;
+}
+
+.quantity_plus{
+  width: 50px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-top-left-radius: unset ;
+  border-bottom-left-radius: unset ;
+}

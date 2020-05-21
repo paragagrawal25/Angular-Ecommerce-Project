@@ -1,710 +1,82 @@
+<!--<app-header></app-header>
 <main>
+  <div class="container">
+    &lt;!&ndash;<h1 class="text-center" style="color: black;">Products Catalog</h1>
+    <br>&ndash;&gt;
+    <div class="row-mt-5">
+      &lt;!&ndash;Grid column&ndash;&gt;
+      <div class="col-md-4 mb-4">
+        <app-products-by-category></app-products-by-category>
+      </div>
+      &lt;!&ndash;Grid column&ndash;&gt;
 
-  <!-- slider Area Start-->
-  <div class="slider-area ">
-    <!-- Mobile Menu -->
-    <div class="single-slider slider-height2 d-flex align-items-center">
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-12">
-            <div class="hero-cap text-center">
-              <h2>Product Category</h2>
+      &lt;!&ndash;Grid column&ndash;&gt;
+      <div class="col-md-8 mb-4">
+        &lt;!&ndash;<div class="row flow-offset-1">
+          <div *ngFor="let tempProduct of products" class="col-xs-6 col-md-4 py-3">
+            <div class="product tumbnail thumbnail-3"><a href="#"><img alt="" src="{{tempProduct.productImageUrl}}"></a>
+              <div class="caption">
+                <h6 style="color: #1f2021"><a href="#">{{tempProduct.productName}}</a></h6><span class="price">
+              </span><span class="price sale">{{tempProduct.productPrice | currency: 'INR'}}</span>
+              </div>
             </div>
           </div>
-        </div>
+        </div>&ndash;&gt;
       </div>
+
     </div>
   </div>
-  <!-- slider Area End-->
+  </main>
+<app-footer></app-footer>-->
 
-  <!-- Latest Products Start -->
-  <section class="latest-product-area latest-padding">
-    <div class="container">
-      <div class="row product-btn d-flex justify-content-between">
-        <div class="properties__button">
-          <!--Nav Button  -->
-          <nav>
-            <div class="nav nav-tabs" id="nav-tab" role="tablist">
-              <a class="nav-item nav-link active" id="nav-all-tab" data-toggle="tab" href="#nav-all" role="tab" aria-controls="nav-all" aria-selected="true">All</a>
-              <a class="nav-item nav-link" id="nav-electronics-tab" data-toggle="tab" href="#nav-electronics" role="tab" aria-controls="nav-electronics" aria-selected="false">Electronics</a>
-              <a class="nav-item nav-link" id="nav-clothings-tab" data-toggle="tab" href="#nav-clothings" role="tab" aria-controls="nav-clothings" aria-selected="false">Clothings</a>
-              <a class="nav-item nav-link" id="nav-books-tab" data-toggle="tab" href="#nav-books" role="tab" aria-controls="nav-books" aria-selected="false">Books</a>
-            </div>
-          </nav>
-          <!--End Nav Button  -->
-        </div>
+<app-header></app-header>
+<!--Main layout-->
+<main>
+  <div class="container-fluid pl-5 pr-5">
+
+    <!--Grid row-->
+    <div class="row mt-5">
+
+      <!--Grid column-->
+      <div class="col-md-2 mb-4">
+        <app-products-by-category></app-products-by-category>
       </div>
+      <!--Grid column-->
 
-      <!-- Nav Card -->
-      <div class="tab-content" id="nav-tabContent">
-        <!-- card one -->
-        <div class="tab-pane fade show active" id="nav-all" role="tabpanel" aria-labelledby="nav-all-tab">
+      <!--Grid column-->
+      <div class="col-md-10">
           <div class="row">
-            <div class="col-xl-4 col-lg-4 col-md-6">
-              <div class="single-product mb-60">
-                <div class="product-img">
-                  <img src="assets/img/book1.jpg" alt="">
-                  <div class="new-product">
-                  </div>
-                </div>
-                <div class="product-caption">
-                  <div class="product-ratting">
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star low-star"></i>
-                    <i class="far fa-star low-star"></i>
-                  </div>
-                  <h4><a routerLink="/product-details" >Green Dress with details</a></h4>
-                  <div class="price">
-                    <ul>
-                      <li>$40.00</li>
-                      <li class="discount">$60.00</li>
-                    </ul>
-                  </div>
+            <!-- Grid column -->
+            <div class="col-md-3 py-2 mr-n2" *ngFor="let tempProduct of products">
+              <!-- Card -->
+              <div class="card mb-2">
+                <div style="height: 250px;">
+                  <img class="card-img-top p-4" style="object-fit: contain; height: 100%; width: 100%;"
+                       routerLink="/products/product-details/{{tempProduct.id}}"
+                       src="{{tempProduct.productImageUrl}}" alt="Sample">
+                  <!--<a href="#!">
+                    <div class="mask">
+                      <img class="img-fluid w-100"
+                           src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg">
+                      <div class="mask rgba-black-slight"></div>
+                    </div>
+                  </a>-->
                 </div>
               </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6">
-              <div class="single-product mb-60">
-                <div class="product-img">
-                  <img src="assets/img/elec1.jpg" alt="">
-                </div>
-                <div class="product-caption">
-                  <div class="product-ratting">
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star low-star"></i>
-                    <i class="far fa-star low-star"></i>
-                  </div>
-                  <h4><a href="#">Green Dress with details</a></h4>
-                  <div class="price">
-                    <ul>
-                      <li>$40.00</li>
-                      <li class="discount">$60.00</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6">
-              <div class="single-product mb-60">
-                <div class="product-img">
-                  <img src="assets/img/elec4.jpg" alt="">
-                  <div class="new-product">
-                    <span>New</span>
-                  </div>
-                </div>
-                <div class="product-caption">
-                  <div class="product-ratting">
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star low-star"></i>
-                    <i class="far fa-star low-star"></i>
-                  </div>
-                  <h4><a href="#">Green Dress with details</a></h4>
-                  <div class="price">
-                    <ul>
-                      <li>$40.00</li>
-                      <li class="discount">$60.00</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6">
-              <div class="single-product mb-60">
-                <div class="product-img">
-                  <img src="assets/img/book2.jpg" alt="">
-                </div>
-                <div class="product-caption">
-                  <div class="product-ratting">
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star low-star"></i>
-                    <i class="far fa-star low-star"></i>
-                  </div>
-                  <h4><a href="#">Green Dress with details</a></h4>
-                  <div class="price">
-                    <ul>
-                      <li>$40.00</li>
-                      <li class="discount">$60.00</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6">
-              <div class="single-product mb-60">
-                <div class="product-img">
-                  <img src="assets/img/gallery/gallery3.jpg" alt="">
-                </div>
-                <div class="product-caption">
-                  <div class="product-ratting">
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star low-star"></i>
-                    <i class="far fa-star low-star"></i>
-                  </div>
-                  <h4><a href="#">Green Dress with details</a></h4>
-                  <div class="price">
-                    <ul>
-                      <li>$40.00</li>
-                      <li class="discount">$60.00</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6">
-              <div class="single-product mb-60">
-                <div class="product-img">
-                  <img src="assets/img/gallery/gallery4.jpg" alt="">
-                  <div class="new-product">
-                  </div>
-                </div>
-                <div class="product-caption">
-                  <div class="product-ratting">
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star low-star"></i>
-                    <i class="far fa-star low-star"></i>
-                  </div>
-                  <h4><a href="#">Green Dress with details</a></h4>
-                  <div class="price">
-                    <ul>
-                      <li>$40.00</li>
-                      <li class="discount">$60.00</li>
-                    </ul>
-                  </div>
-                </div>
+                <div class="card-body text-center">
+                  <h6 class="card-title mt-n3">{{tempProduct.productName}}</h6>
+                  <p class="card-text mt-n2"><strong>{{tempProduct.productPrice | currency: 'INR'}}</strong></p>
+              <!-- Card -->
               </div>
             </div>
           </div>
-        </div>
-
-        <!-- Card two -->
-        <div class="tab-pane fade" id="nav-electronics" role="tabpanel" aria-labelledby="nav-electronics-tab">
-          <div class="row">
-            <div class="col-xl-4 col-lg-4 col-md-6">
-              <div class="single-product mb-60">
-                <div class="product-img">
-                  <img src="assets/img/elec1.jpg" alt="">
-                </div>
-                <div class="product-caption">
-                  <div class="product-ratting">
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star low-star"></i>
-                    <i class="far fa-star low-star"></i>
-                  </div>
-                  <h4><a href="#">Green Dress with details</a></h4>
-                  <div class="price">
-                    <ul>
-                      <li>$40.00</li>
-                      <li class="discount">$60.00</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6">
-              <div class="single-product mb-60">
-                <div class="product-img">
-                  <img src="assets/img/elec2.jpg" alt="">
-                </div>
-                <div class="product-caption">
-                  <div class="product-ratting">
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star low-star"></i>
-                    <i class="far fa-star low-star"></i>
-                  </div>
-                  <h4><a href="#">Green Dress with details</a></h4>
-                  <div class="price">
-                    <ul>
-                      <li>$40.00</li>
-                      <li class="discount">$60.00</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6">
-              <div class="single-product mb-60">
-                <div class="product-img">
-                  <img src="assets/img/elec3.jpg" alt="">
-                  <div class="new-product">
-                    <span>New</span>
-                  </div>
-                </div>
-                <div class="product-caption">
-                  <div class="product-ratting">
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star low-star"></i>
-                    <i class="far fa-star low-star"></i>
-                  </div>
-                  <h4><a href="#">Green Dress with details</a></h4>
-                  <div class="price">
-                    <ul>
-                      <li>$40.00</li>
-                      <li class="discount">$60.00</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6">
-              <div class="single-product mb-60">
-                <div class="product-img">
-                  <img src="assets/img/elec4.jpg" alt="">
-                </div>
-                <div class="product-caption">
-                  <div class="product-ratting">
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star low-star"></i>
-                    <i class="far fa-star low-star"></i>
-                  </div>
-                  <h4><a href="#">Green Dress with details</a></h4>
-                  <div class="price">
-                    <ul>
-                      <li>$40.00</li>
-                      <li class="discount">$60.00</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6">
-              <div class="single-product mb-60">
-                <div class="product-img">
-                  <img src="assets/img/elec5.jpg" alt="">
-                  <div class="new-product">
-                  </div>
-                </div>
-                <div class="product-caption">
-                  <div class="product-ratting">
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star low-star"></i>
-                    <i class="far fa-star low-star"></i>
-                  </div>
-                  <h4><a href="#">Green Dress with details</a></h4>
-                  <div class="price">
-                    <ul>
-                      <li>$40.00</li>
-                      <li class="discount">$60.00</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6">
-              <div class="single-product mb-60">
-                <div class="product-img">
-                  <img src="assets/img/elec6.jpg" alt="">
-                  <div class="new-product">
-                  </div>
-                </div>
-                <div class="product-caption">
-                  <div class="product-ratting">
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star low-star"></i>
-                    <i class="far fa-star low-star"></i>
-                  </div>
-                  <h4><a href="#">Green Dress with details</a></h4>
-                  <div class="price">
-                    <ul>
-                      <li>$40.00</li>
-                      <li class="discount">$60.00</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card three -->
-        <div class="tab-pane fade" id="nav-clothings" role="tabpanel" aria-labelledby="nav-clothings-tab">
-          <div class="row">
-            <div class="col-xl-4 col-lg-4 col-md-6">
-              <div class="single-product mb-60">
-                <div class="product-img">
-                  <img src="assets/img/gallery/gallery1.jpg" alt="">
-                </div>
-                <div class="product-caption">
-                  <div class="product-ratting">
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star low-star"></i>
-                    <i class="far fa-star low-star"></i>
-                  </div>
-                  <h4><a href="#">Green Dress with details</a></h4>
-                  <div class="price">
-                    <ul>
-                      <li>$40.00</li>
-                      <li class="discount">$60.00</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6">
-              <div class="single-product mb-60">
-                <div class="product-img">
-                  <img src="assets/img/gallery/gallery2.jpg" alt="">
-                  <div class="new-product">
-                    <span>New</span>
-                  </div>
-                </div>
-                <div class="product-caption">
-                  <div class="product-ratting">
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star low-star"></i>
-                    <i class="far fa-star low-star"></i>
-                  </div>
-                  <h4><a href="#">Green Dress with details</a></h4>
-                  <div class="price">
-                    <ul>
-                      <li>$40.00</li>
-                      <li class="discount">$60.00</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6">
-              <div class="single-product mb-60">
-                <div class="product-img">
-                  <img src="assets/img/gallery/gallery3.jpg" alt="">
-                  <div class="new-product">
-                    <span>New</span>
-                  </div>
-                </div>
-                <div class="product-caption">
-                  <div class="product-ratting">
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star low-star"></i>
-                    <i class="far fa-star low-star"></i>
-                  </div>
-                  <h4><a href="#">Green Dress with details</a></h4>
-                  <div class="price">
-                    <ul>
-                      <li>$40.00</li>
-                      <li class="discount">$60.00</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6">
-              <div class="single-product mb-60">
-                <div class="product-img">
-                  <img src="assets/img/gallery/gallery4.jpg" alt="">
-                </div>
-                <div class="product-caption">
-                  <div class="product-ratting">
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star low-star"></i>
-                    <i class="far fa-star low-star"></i>
-                  </div>
-                  <h4><a href="#">Green Dress with details</a></h4>
-                  <div class="price">
-                    <ul>
-                      <li>$40.00</li>
-                      <li class="discount">$60.00</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6">
-              <div class="single-product mb-60">
-                <div class="product-img">
-                  <img src="assets/img/gallery/gallery5.jpg" alt="">
-                  <div class="new-product">
-                    <span>New</span>
-                  </div>
-                </div>
-                <div class="product-caption">
-                  <div class="product-ratting">
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star low-star"></i>
-                    <i class="far fa-star low-star"></i>
-                  </div>
-                  <h4><a href="#">Green Dress with details</a></h4>
-                  <div class="price">
-                    <ul>
-                      <li>$40.00</li>
-                      <li class="discount">$60.00</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6">
-              <div class="single-product mb-60">
-                <div class="product-img">
-                  <img src="assets/img/arrivel/arrivel_4.png" alt="">
-                </div>
-                <div class="product-caption">
-                  <div class="product-ratting">
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star low-star"></i>
-                    <i class="far fa-star low-star"></i>
-                  </div>
-                  <h4><a href="#">Green Dress with details</a></h4>
-                  <div class="price">
-                    <ul>
-                      <li>$40.00</li>
-                      <li class="discount">$60.00</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- card foure -->
-        <div class="tab-pane fade" id="nav-books" role="tabpanel" aria-labelledby="nav-books-tab">
-          <div class="row">
-            <div class="col-xl-4 col-lg-4 col-md-6">
-              <div class="single-product mb-60">
-                <div class="product-img">
-                  <img src="assets/img/book1.jpg" alt="">
-                  <div class="new-product">
-                    <span>New</span>
-                  </div>
-                </div>
-                <div class="product-caption">
-                  <div class="product-ratting">
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star low-star"></i>
-                    <i class="far fa-star low-star"></i>
-                  </div>
-                  <h4><a href="#">Green Dress with details</a></h4>
-                  <div class="price">
-                    <ul>
-                      <li>$40.00</li>
-                      <li class="discount">$60.00</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6">
-              <div class="single-product mb-60">
-                <div class="product-img">
-                  <img src="assets/img/book2.jpg" alt="">
-                </div>
-                <div class="product-caption">
-                  <div class="product-ratting">
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star low-star"></i>
-                    <i class="far fa-star low-star"></i>
-                  </div>
-                  <h4><a href="#">Green Dress with details</a></h4>
-                  <div class="price">
-                    <ul>
-                      <li>$40.00</li>
-                      <li class="discount">$60.00</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6">
-              <div class="single-product mb-60">
-                <div class="product-img">
-                  <img src="assets/img/book3.jpg" alt="">
-                  <div class="new-product">
-                    <span>New</span>
-                  </div>
-                </div>
-                <div class="product-caption">
-                  <div class="product-ratting">
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star low-star"></i>
-                    <i class="far fa-star low-star"></i>
-                  </div>
-                  <h4><a href="#">Green Dress with details</a></h4>
-                  <div class="price">
-                    <ul>
-                      <li>$40.00</li>
-                      <li class="discount">$60.00</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6">
-              <div class="single-product mb-60">
-                <div class="product-img">
-                  <img src="assets/img/book4.jpg" alt="">
-                </div>
-                <div class="product-caption">
-                  <div class="product-ratting">
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star low-star"></i>
-                    <i class="far fa-star low-star"></i>
-                  </div>
-                  <h4><a href="#">Green Dress with details</a></h4>
-                  <div class="price">
-                    <ul>
-                      <li>$40.00</li>
-                      <li class="discount">$60.00</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6">
-              <div class="single-product mb-60">
-                <div class="product-img">
-                  <img src="assets/img/book5.jpg" alt="">
-                </div>
-                <div class="product-caption">
-                  <div class="product-ratting">
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star low-star"></i>
-                    <i class="far fa-star low-star"></i>
-                  </div>
-                  <h4><a href="#">Green Dress with details</a></h4>
-                  <div class="price">
-                    <ul>
-                      <li>$40.00</li>
-                      <li class="discount">$60.00</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6">
-              <div class="single-product mb-60">
-                <div class="product-img">
-                  <img src="assets/img/book6.jpg" alt="">
-                  <div class="new-product">
-                    <span>New</span>
-                  </div>
-                </div>
-                <div class="product-caption">
-                  <div class="product-ratting">
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star low-star"></i>
-                    <i class="far fa-star low-star"></i>
-                  </div>
-                  <h4><a href="#">Green Dress with details</a></h4>
-                  <div class="price">
-                    <ul>
-                      <li>$40.00</li>
-                      <li class="discount">$60.00</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
-      <!-- End Nav Card -->
+      <!--Grid column-->
+      <hr>
     </div>
-  </section>
-  <!-- Latest Products End -->
+    <!--Grid row-->
 
-  <!-- Latest Offers Start -->
-  <div class="latest-wrapper lf-padding">
-    <div class="latest-area latest-height d-flex align-items-center" data-background="assets/img/collection/latest-offer.png">
-      <div class="container">
-        <div class="row d-flex align-items-center">
-          <div class="col-xl-5 col-lg-5 col-md-6 offset-xl-1 offset-lg-1">
-            <div class="latest-caption">
-              <h2>Get Our<br>Latest Offers News</h2>
-              <p>Subscribe news latter</p>
-            </div>
-          </div>
-          <div class="col-xl-5 col-lg-5 col-md-6 ">
-            <div class="latest-subscribe">
-              <form action="#">
-                <input type="email" placeholder="Your email here">
-                <button>Shop Now</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- man Shape -->
-      <div class="man-shape">
-        <img src="assets/img/collection/latest-man.png" alt="">
-      </div>
-    </div>
   </div>
-  <!-- Latest Offers End -->
-  <!-- Shop Method Start-->
-  <div class="shop-method-area section-padding30">
-    <div class="container">
-      <div class="row d-flex justify-content-between">
-        <div class="col-xl-3 col-lg-3 col-md-6">
-          <div class="single-method mb-40">
-            <i class="ti-package"></i>
-            <h6>Free Shipping Method</h6>
-            <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
-          </div>
-        </div>
-        <div class="col-xl-3 col-lg-3 col-md-6">
-          <div class="single-method mb-40">
-            <i class="ti-unlock"></i>
-            <h6>Secure Payment System</h6>
-            <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
-          </div>
-        </div>
-        <div class="col-xl-3 col-lg-3 col-md-6">
-          <div class="single-method mb-40">
-            <i class="ti-reload"></i>
-            <h6>Secure Payment System</h6>
-            <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Shop Method End-->
 </main>
+<!--Main layout-->
+<app-footer></app-footer>

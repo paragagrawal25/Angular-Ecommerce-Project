@@ -3,8 +3,8 @@
 <div class="px-4 px-lg-0">
   <!-- For demo purpose -->
   <div class="container text-white py-5 text-center">
-    <h1 style="font-size: 40px " class="display-4" data-bs-hover-animate="pulse"><strong
-      style="font-family: Arial; color: black">Shopping cart </strong><a href="#" data-bs-hover-animate="pulse"><i
+    <h1 style="font-size: 40px; cursor: pointer" class="display-4" data-bs-hover-animate="pulse"><strong
+      style="font-family: Arial; color: black">Shopping cart </strong><a routerLink="/cart/{{username}}" data-bs-hover-animate="pulse"><i
       class="fa fa-shopping-cart fa-1x" style="color:black"></i></a></h1>
 
     <p style="font-size: 30px; color: black" class="lead mb-0">Please feel free to update your cart before placing the
@@ -38,7 +38,7 @@
               </tr>
               </thead>
               <tbody>
-              <tr> <!--*ngFor="let tempProduct of objCart.productList">-->
+              <tr *ngFor="let tempProduct of objCart.productList">
                 <!---->
                 <!--<div class="p-2">-->
                 <td scope="row">
@@ -46,27 +46,26 @@
                     src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-11-pro-select-2019-family?wid=882&amp;hei=1058&amp;fmt=jpeg&amp;qlt=80&amp;op_usm=0.5,0.5&amp;.v=1586586488946"
                     alt="" width="70" class="img-fluid rounded shadow-sm">
                   <div class="ml-3 d-inline-block align-middle">
-                    <h5 style="font-size: 20px" class="mb-0">
-                      <a href="#"
-                         class="text-dark d-inline-block">ABCD</a>  <!--{{ tempProduct.productName }}-->
+                    <h5 style="font-size: 20px" class="mb-0"><a href="#"
+                                                                class="text-dark d-inline-block">{{ tempProduct.productName }}</a>
                     </h5><span class="text-muted font-weight-normal font-italic">Category: Electronics</span>
                   </div>
                 </td>
 
                 <td class="align-middle">
                   <div style="position:relative; right: -50px;">
-                    <h5>5000</h5><!--{{ tempProduct.productPrice | currency: 'INR' }}</h5>-->
+                    <h5>{{ tempProduct.productPrice | currency: 'INR' }}</h5>
                   </div>
                 </td>
                 <td><!--class="align-middle"-->
                   <div class="qty mt-4">
                     <span class="minus bg-dark">-</span>
-                    <input type="number" class="count" name="qty" value="2">
+                    <input type="number" class="count" name="qty" value="{{ tempProduct.quantity}}">
                     <span class="plus bg-dark">+</span>
                   </div>
                 </td>
                 <td class="align-middle">
-                  <h5>10000</h5></td><!--{{ tempProduct.productPrice * tempProduct.quantity | currency: 'INR' }}</h5></td>-->
+                  <h5>{{ tempProduct.productPrice * tempProduct.quantity | currency: 'INR' }}</h5></td>
                 <!--</div>-->
               </tr>
               </tbody>
@@ -74,7 +73,6 @@
           </div>
 
           <!-- End -->
-
 
           <div class="text-center">
             <div class="row py-5 p-4 bg-white rounded shadow-sm">
@@ -89,7 +87,7 @@
                     <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted"
                                                                                           style="font-size: 15px;">Order
                       Subtotal </strong><strong
-                      style="font-size: 15px;"></strong></li><!--{{ objCart.totalPrice | currency: 'INR' }}</strong></li>-->
+                      style="font-size: 15px;">{{ objCart.totalPrice | currency: 'INR' }}</strong></li>
                     <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted"
                                                                                           style="font-size: 15px;">Shipping
                       and handling</strong><strong style="font-size: 15px;">Free</strong></li>
@@ -99,10 +97,10 @@
                     <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted"
                                                                                           style="font-size: 15px;">Total</strong>
                       <h5 class="font-weight-bold"
-                          style="font-size: 15px;"></h5><!--{{ objCart.totalPrice | currency: 'INR' }}</h5>-->
+                          style="font-size: 15px;">{{ objCart.totalPrice | currency: 'INR' }}</h5>
                     </li>
                   </ul>
-                  <a routerLink="/checkout" class="btn btn-dark rounded-pill py-2 btn-block">Proceed to checkout</a>
+                  <a routerLink="/checkout/{{username}}" class="btn btn-dark rounded-pill py-2 btn-block">Proceed to checkout</a>
                 </div>
               </div>
             </div>

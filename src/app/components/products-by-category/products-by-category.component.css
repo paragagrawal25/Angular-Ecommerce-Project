@@ -1,0 +1,13 @@
+a{
+  display:block;
+  color:#555;
+  font-size:16px;
+  padding:5px 0
+}
+a:hover{
+  color:#0da8e4
+}
+.active-link{
+  font-weight: bold;
+  color: #f3214b;
+}

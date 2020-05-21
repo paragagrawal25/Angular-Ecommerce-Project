@@ -1,0 +1,276 @@
+section {
+  display: block;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.section {
+  padding: 100px 0;
+  position: relative;
+}
+.btn {
+  position: relative;
+  font-weight: 500;
+  font-size: 14px;
+  color: #fff;
+  background: #333;
+  display: inline-block;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  z-index: 5;
+  display: inline-block;
+  padding: 13px 32px;
+  border-radius: 0px;
+  text-transform: uppercase;
+}
+
+.btn:hover {
+  color: #fff;
+  background: #F7941D;
+}
+
+/*======================================
+  21. Contact CSS
+========================================*/
+.contact-us {
+  position: relative;
+  z-index: 43;
+}
+
+.contact-us .title {
+  margin-bottom: 30px;
+}
+
+.contact-us .title h4 {
+  font-size: 17px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #F7941D;
+}
+
+.contact-us .title h3 {
+  font-size: 25px;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.contact-us .single-head {
+  padding: 50px;
+  box-shadow: 0px 0px 15px #0000001a;
+  height: 100%;
+}
+
+.contact-us .single-info {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.contact-us .single-info i {
+  color: #fff;
+  font-size: 18px;
+  display: inline-block;
+  margin-bottom: 15px;
+  height: 40px;
+  width: 40px;
+  display: block;
+  text-align: center;
+  border-radius: 3px;
+  line-height: 40px;
+  background: #F7941D;
+}
+
+.contact-us .single-info ul
+.contact-us .single-info ul li {
+  margin-bottom: 5px;
+}
+
+.contact-us .single-info ul li:last-child {
+  margin-bottom: 0;
+}
+
+.contact-us .single-info ul li a {
+  font-weight: 400;
+}
+
+.contact-us .single-info ul li a:hover {
+  color: #F7941D;
+}
+
+.contact-us .single-info .title {
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: #333;
+  font-size: 18px;
+}
+
+.contact-us .form-main {
+  box-shadow: 0px 0px 15px #0000001a;
+  padding: 50px;
+}
+
+.contact-us .form .form-group input {
+  height: 48px;
+  line-height: 48px;
+  width: 100%;
+  border: 1px solid #e6e2f5;
+  padding: 0px 20px;
+  color: #333;
+  border-radius: 0px;
+  font-weight: 400;
+}
+
+.contact-us .form .form-group textarea {
+  height: 180px;
+  width: 100%;
+  border: 1px solid #e6e2f5;
+  padding: 15px 20px;
+  color: #333;
+  border-radius: 0px;
+  resize: none;
+  font-weight: 400;
+}
+
+.contact-us .form .form-group label {
+  color: #333;
+  position: relative;
+}
+
+.contact-us .form .form-group label span {
+  color: #ff2c18;
+  display: inline-block;
+  position: absolute;
+  right: -12px;
+  top: 4px;
+  font-size: 16px;
+}
+
+.contact-us .form .button {
+  margin: 0;
+}
+
+.contact-us .form .button .btn {
+  height: 50px;
+  border: none;
+}
+
+#myMap {
+  height: 500px;
+  width: 100%;
+}
+
+/*======================================
+  End Contact CSS
+========================================*/
+
+/* Mail Success */
+.mail-success .mail-inner {
+  text-align: center;
+  background: #fff;
+  padding: 0px 30px;
+}
+
+.mail-success .mail-inner h2 {
+  margin-bottom: 10px;
+  display: block;
+  font-weight: 600;
+  color: #F7941D;
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+.mail-success .mail-inner p {
+  font-size: 14;
+  color: #333;
+  margin-bottom: 30px;
+  line-height: 22px;
+}
+
+.mail-success .mail-inner .btn {
+  color: #fff;
+  padding: 10px 30px;
+}
+
+.mail-success .mail-inner .btn i {
+  margin-right: 5px;
+}
+
+/*--------------------------------------------------------------
+## Links
+--------------------------------------------------------------*/
+a {
+  color: inherit;
+}
+
+a:visited {
+  color: inherit;
+}
+
+a:hover, a:focus, a:active {
+  color: inherit;
+}
+
+a:hover, a:active {
+  outline: 0;
+}
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+/*html {
+  font-family: 'Poppins', sans-serif;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+html,body {
+  height: 100%;
+  margin: 0;
+}*/
+/** {
+  padding: 0;
+  margin: 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+*,
+*:before,
+*:after {
+  !* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ *!
+  box-sizing: inherit;
+}
+
+.section {
+  padding: 100px 0;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:active,
+a:hover {
+  outline: 0;
+  text-decoration: none;
+}*/
+

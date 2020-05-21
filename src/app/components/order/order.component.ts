@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {OrderService} from '../../services/order.service';
+import {Order} from '../../classes/order';
 
 @Component({
   selector: 'app-order',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./order.component.css']
 })
 export class OrderComponent implements OnInit {
-
-  constructor() { }
+  objOrder: Order[];
+  username: string;
+  constructor(private orderService: OrderService) { }
 
   ngOnInit(): void {
+    this.getOrder();
+  }
+
+  getOrder(){
+    this.username = sessionStorage.getItem('username');
+    this.orderService.getOrderByUserName(this.username).subscribe(data => { this.objOrder = data; });
   }
 
 }

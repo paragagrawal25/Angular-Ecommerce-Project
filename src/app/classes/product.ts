@@ -1,5 +1,6 @@
 export class Product {
   private _productId: number;
+  private _productImageUrl: string;
   private _productName: string;
   private _productPrice: number;
   private _quantity: number;
@@ -10,6 +11,14 @@ export class Product {
 
   set productId(value: number) {
     this._productId = value;
+  }
+
+  get productImageUrl(): string {
+    return this._productImageUrl;
+  }
+
+  set productImageUrl(value: string) {
+    this._productImageUrl = value;
   }
 
   get productName(): string {

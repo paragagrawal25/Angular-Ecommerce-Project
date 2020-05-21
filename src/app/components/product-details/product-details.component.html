@@ -1,79 +1,131 @@
-<!-- slider Area Start-->
-<div class="slider-area ">
-  <!-- Mobile Menu -->
-  <div class="single-slider slider-height2 d-flex align-items-center">
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-12">
-          <div class="hero-cap text-center">
-            <h2>product Details</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- slider Area End-->
+<!--<div class="container-fluid">-->
 
-<!--================Single Product Area =================-->
-<div class="product_image_area">
-  <div class="container">
+<!--  <div class="container">-->
+
+<!--    <div class="card border-0" style="padding-left: 50px;">-->
+
+<!--    <div class="row">-->
+
+<!--      <div class="col-md-6 text-left" style="padding-top: 170px">-->
+<!--        <h1 class="product_name">T-Shirt Store</h1>-->
+
+<!--        <span class="text-muted product_desc">A cotton fabric t-shirt with comfort fit....</span>-->
+<!--        <p class="pro_price">Rs 1700/-</p>-->
+
+<!--        <button type="button" class="btn btn-danger buyNow">Buy Now</button>-->
+<!--      </div>-->
+
+<!--      <div class="col-md-6 text-center">-->
+
+<!--        <img class="image_size" src="https://images.unsplash.com/photo-1543132220-e7fef0b974e7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60">-->
+
+<!--      </div>-->
+
+<!--    </div>-->
+<!--    </div>-->
+
+<!--  </div>-->
+
+<!--</div>-->
+
+<app-header></app-header>
+
+
+<div class="container">
+  <div class="container-fluid py-4">
+
     <div class="row">
-      <div class="col-sm-5">
-        <div class="product_img_slide owl-carousel">
-          <div class="single_product_img">
-            <img src="assets/img/product/single_product.png" alt="#" class="img-fluid">
+
+      <div class="col-md-5 text-center">
+<!--        <img class="proImage" src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/15a.jpg">-->
+
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img class="proImage" src="{{product.productImageUrl}}">
+            </div>
+            <div class="carousel-item">
+              <img class="proImage" src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/13a.jpg">
+            </div>
+            <div class="carousel-item">
+              <img class="proImage" src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/14a.jpg">
+            </div>
           </div>
-          <div class="single_product_img">
-            <img src="assets/img/product/single_product.png" alt="#" class="img-fluid">
-          </div>
-          <div class="single_product_img">
-            <img src="assets/img/product/single_product.png" alt="#" class="img-fluid">
-          </div>
+          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
         </div>
+
+
       </div>
-      <div class="col-sm-7">
-        <div class="single_product_text text-center">
-          <h3>Foam filling cotton slow <br>
-            rebound pillows</h3>
-          <p>
-            Seamlessly empower fully researched growth strategies and interoperable internal or “organic” sources. Credibly innovate granular internal or “organic” sources whereas high standards in web-readiness. Credibly innovate granular internal or organic sources whereas high standards in web-readiness. Energistically scale future-proof core competencies vis-a-vis impactful experiences. Dramatically synthesize integrated schemas. with optimal networks.
-          </p>
-          <div class="card_area">
-            <div class="product_count_area">
-              <p>Quantity</p>
-              <div class="product_count d-inline-block">
-                <span class="product_count_item inumber-decrement"> <i class="ti-minus"></i></span>
-                <input class="product_count_item input-number" type="text" value="1" min="0" max="10">
-                <span class="product_count_item number-increment"> <i class="ti-plus"></i></span>
-              </div>
-              <p>$5</p>
-            </div>
-            <div class="add_to_cart">
-              <a href="#" class="btn_3">add to cart</a>
-            </div>
-          </div>
+
+      <div class="col-md-7">
+
+        <h4 class="py-2">{{product.productName}}</h4>
+        <span class="text-muted">SHIRTS</span><br>
+
+        <div class="py-2">
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
         </div>
+
+        <p class="priceTag"><strong>{{product.productPrice | currency: 'INR'}}</strong></p>
+
+        <p class="proDesc">{{product.productDescription}}</p>
+
+        <div class="row py-3">
+
+          <div class="col-md-4">
+
+            <h5>Quantity</h5><br>
+            <button type="button" class="quantity btn btn-light border-secondary"><i class="fa fa-minus" style="color: grey"></i></button>
+            <button style="border-radius: unset; width: 50px;" type="button" class="btn btn-light border-secondary">1</button>
+            <button type="button" class="quantity_plus btn btn-light border-secondary"><i class="fa fa-plus" style="color: grey"></i></button>
+          </div>
+
+          <div class="col-md-8">
+
+            <h5>Select Size</h5><br>
+
+            <div class="form-check form-check-inline">
+              <input style="color: #1266F1" class="form-check-input" type="radio" value="Small">
+              <label class="form-check-label text-muted">SMALL</label>
+            </div>
+
+            <div class="form-check form-check-inline">
+              <input style="color: #1266F1" class="form-check-input" type="radio" value="MEDIUM">
+              <label class="form-check-label text-muted">MEDIUM</label>
+            </div>
+
+            <div class="form-check form-check-inline">
+              <input style="color: #1266F1" class="form-check-input" type="radio" value="LARGE">
+              <label class="form-check-label text-muted">LARGE</label>
+            </div>
+
+
+          </div>
+
+        </div>
+
+        <button style="margin-top: 20px; width: 175px;" type="button" class="btn btn-primary" (click)="handleBuyNowObjects()" routerLink="/cart/{{username}}">
+          Buy Now
+        </button>
+
+        <button style="margin-left: 40px; margin-top: 20px; width: 175px;" type="button" class="btn btn-warning" (click)="handleCartObjects()">
+          <i class="fa fa-shopping-cart"></i> Add To Cart</button>
+
       </div>
     </div>
+
   </div>
 </div>
-<!--================End Single Product Area =================-->
-<!-- subscribe part here -->
-<section class="subscribe_part section_padding">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <div class="subscribe_part_content">
-          <h2>Get promotions & updates!</h2>
-          <p>Seamlessly empower fully researched growth strategies and interoperable internal or “organic” sources credibly innovate granular internal .</p>
-          <div class="subscribe_form">
-            <input type="email" placeholder="Enter your mail">
-            <a href="#" class="btn_1">Subscribe</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- subscribe part end -->
+
+<app-footer></app-footer>

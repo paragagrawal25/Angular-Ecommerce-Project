@@ -1,0 +1,48 @@
+.header_card{
+  height: 230px;
+}
+
+.product_card{
+  height: 150px;
+}
+
+.header_card h5{
+  font-weight: 700;
+}
+
+.name{
+  font-weight: 500;
+}
+
+.address{
+  font-size: 15px;
+}
+
+.header-gif{
+  height: 150px;
+  width: 60%;
+  padding-right: 40px;
+  margin-top: 17px;
+}
+
+.product-image{
+  /*height: 75%;*/
+  /*width: 47%;*/
+  /*padding-left: 7px;*/
+  /*margin-left: 10px;*/
+  height: 100px;
+}
+
+.product-name{
+  font-weight: 500;
+}
+
+.status{
+  height: 30px;
+  width: auto;
+  text-align: center;
+  padding-top: 6px;
+  margin-top: 30px;
+}
+
+

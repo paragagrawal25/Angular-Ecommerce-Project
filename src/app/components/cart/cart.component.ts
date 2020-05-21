@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import {Cart} from '../../classes/cart';
+import {CartService} from '../../services/cart.service';
+import {Observable} from 'rxjs';
+import {Product} from '../../classes/product';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -7,27 +12,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
 
-  /*objCart: Cart;
-  objProduct: Product;*/
+  objCart: Cart;
+  objProduct: Product;
+  username: string;
 
-  constructor() {
-  }
+  constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
-    // this.listCart();
+    this.reloadData();
   }
-}
-  // listCart() {
-  //  this.objCart = this.cartService.getCartByName("muz7u");
- // }
-  // reloadData() {
-   /*this.cartService.getCartByName('muz7u').subscribe(data => {this.objCart = data; });
+
+  reloadData() {
+   this.listCart();
   }
 
   listCart() {
     // const theProductId: number = +this.route.snapshot.paramMap.get('id');
-    this.cartService.getCartByName('muz7u').subscribe(data => {
+    this.username = sessionStorage.getItem('username');
+    this.cartService.getCartByName(this.username).subscribe(data => {
       this.objCart = data;
           });
-  }*/
-
+  }
+}

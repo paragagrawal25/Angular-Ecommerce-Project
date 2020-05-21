@@ -87,4 +87,17 @@ body {
   background: linear-gradient(to right, #D3CCE3, #fffcdc);
   min-height: 100vh;
 }
+.gallery-wrapper{
+  width: 100%;
+  overflow: hidden;
+}
 
+.gallery-wrapper .gallery-area .gallery-items{
+  display: flex;
+  width: 20%;
+}
+
+.lf-padding{
+  padding-left: 40px;
+  padding-right: 40px;
+}
