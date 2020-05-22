@@ -67,3 +67,9 @@ input::-webkit-inner-spin-button {
 input:disabled{
   background-color:white;
 }
+.word-design{
+  white-space: nowrap;
+  width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -13,7 +13,6 @@ import {ActivatedRoute} from '@angular/router';
 export class CartComponent implements OnInit {
 
   objCart: Cart;
-  objProduct: Product;
   username: string;
 
   constructor(private cartService: CartService) { }
@@ -31,6 +30,6 @@ export class CartComponent implements OnInit {
     this.username = sessionStorage.getItem('username');
     this.cartService.getCartByName(this.username).subscribe(data => {
       this.objCart = data;
-          });
+    });
   }
 }

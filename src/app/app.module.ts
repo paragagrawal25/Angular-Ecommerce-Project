@@ -14,7 +14,7 @@ import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {RouterModule, Routes} from '@angular/router';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HeaderComponent} from './components/header/header.component';
 import {FooterComponent} from './components/footer/footer.component';
 import {ProductDetailsComponent} from './components/product-details/product-details.component';
@@ -33,6 +33,7 @@ import {AuthGuardService} from './services/auth-guard.service';
 import { LogoutComponent } from './components/logout/logout.component';
 import {MyOrdersComponent} from './components/my-orders/my-orders.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { PaymentGatewayComponent } from './components/payment-gateway/payment-gateway.component';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
@@ -42,12 +43,13 @@ const routes: Routes = [
   {path: 'profile/:userName', component: ProfilePageComponent, canActivate: [AuthGuardService]},
   {path: 'cart/:username', component: CartComponent, canActivate: [AuthGuardService]},
   {path: 'checkout/:username', component: CheckOutComponent, canActivate: [AuthGuardService]},
+  {path: 'payment-gateway/:username', component: PaymentGatewayComponent, canActivate: [AuthGuardService]},
   {path: 'my-orders/:username', component: OrderComponent, canActivate: [AuthGuardService]},
   {path: 'my-orders-detail/:username', component: MyOrdersComponent, canActivate: [AuthGuardService]},
   {path: 'products/product-details/:id', component: ProductDetailsComponent},
   {path: 'products', component: ProductsComponent},
   {path: 'products/category/:id', component: ProductsComponent},
-  {path: 'search-products/:searchKeyword', component: SearchProductComponent},
+  {path: 'search-products/:searchKeyword', component: ProductsComponent},
   {path: 'about-us', component: AboutUsComponent},
   {path: 'orders', component: OrdersComponent, canActivate: [AuthGuardService]},
   {path: 'admin-page', component: AdminPanelComponent},
@@ -81,7 +83,8 @@ const routes: Routes = [
     AdminPanelComponent,
     LogoutComponent,
     MyOrdersComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    PaymentGatewayComponent
   ],
   imports: [
     BrowserModule,
@@ -91,7 +94,8 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     FormsModule,
     HttpClientModule,
-    MatButtonModule
+    MatButtonModule,
+    ReactiveFormsModule
   ],
   exports: [
     MatDialogModule

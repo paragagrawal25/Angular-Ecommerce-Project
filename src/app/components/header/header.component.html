@@ -8,9 +8,11 @@
       class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse" id="navcol-1" style="width: 623px;">
       <form class="form-inline mx-auto" id="serachBar">
-        <input class="form-control" id="searchInput" placeholder="  Search Products" style="opacity: 0.87;"
-                                                              type="search">
-        <a routerLink="/search-products"><i class="fa fa-search" data-bs-hover-animate="pulse"></i>
+        <input  #myInput class="form-control" id="searchInput"
+                placeholder="  Search Products"
+                style="opacity: 0.87;" type="search" (keyup.enter)="findProduct(myInput.value)">
+        <a (click)="findProduct(myInput.value)">
+          <i class="fa fa-search" data-bs-hover-animate="pulse"></i>
         </a>
       </form>
       <ul class="nav navbar-nav ml-auto"
@@ -62,25 +64,25 @@
         <li class="nav-item" role="presentation"><a class="nav-link active" data-bs-hover-animate="pulse"
                                                     routerLink="/cart/{{username}}" id="cart">
           <i class="fa fa-shopping-cart fa-2x" style=" color: white;"></i>
-          <span class="badge badge-pill badge-primary float-right" id="cartBadge"
+          <span class="badge badge-pill badge-primary float-right" id="cartBadge" *ngIf="isUserLoggedIn"
                 style="margin-top: 0px;height: 20px;padding: 4px;margin-left: -6px;opacity: 0.84;">
-          {{cart.productList.length}}
+            0<!--{{ cart.productList.length }}-->
           </span>
         </a>
         </li>
         <li class="nav-item" role="presentation"></li>
         <li class="nav-item" role="presentation"></li>
-        <li class="nav-item" role="presentation">
+        <li class="nav-item" role="presentation" *ngIf="!isUserLoggedIn">
           <a class="nav-link" routerLink="/login">
-            <button type="button" *ngIf="!isUserLoggedIn" class="btn btn-primary" data-bs-hover-animate="pulse" mat-button
+            <button type="button" class="btn btn-primary" data-bs-hover-animate="pulse" mat-button
                     style="background-color: #eb3b60; color: white; border-radius: 8px; font-size: 16px;">
               Sign In
             </button>
           </a>
         </li>
-        <li class="nav-item" role="presentation">
+        <li class="nav-item" role="presentation" *ngIf="isUserLoggedIn">
           <a class="nav-link" routerLink="/logout">
-            <button *ngIf="isUserLoggedIn" class="btn text-center" data-bs-hover-animate="pulse"
+            <button class="btn text-center" data-bs-hover-animate="pulse"
                     style="background-color: #eb3b60; color: white; border-radius: 8px; font-size: 16px;" type="button">
               Sign Out
             </button>

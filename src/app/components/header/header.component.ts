@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import {LoginComponent} from '../login/login.component';
 import {AuthenticationService} from '../../services/authentication.service';
-import {Customer} from "../../classes/customer";
-import {Router} from "@angular/router";
-import {Cart} from "../../classes/cart";
-import {CartService} from "../../services/cart.service";
+import {Customer} from '../../classes/customer';
+import {Router} from '@angular/router';
+import {Cart} from '../../classes/cart';
+import {CartService} from '../../services/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -26,7 +26,7 @@ export class HeaderComponent implements OnInit {
     this.isUserLoggedIn = this.authenticationService.isUserLoggedIn();
     console.log(this.isUserLoggedIn);
     this.username = sessionStorage.getItem('username');
-    this.getCart();
+    // this.getCart();
   }
 
   showAcc(username: string) {
@@ -38,6 +38,17 @@ export class HeaderComponent implements OnInit {
     this.cartService.getCartByName(this.username).subscribe( data => {
       this.cart = data;
     });
+  }
+
+  findProduct(searchKeyword: string) {
+    if (searchKeyword.length > 0) {
+      this.router.navigateByUrl(`/search-products/${searchKeyword}`);
+      console.log(searchKeyword);
+    }
+    else {
+      this.router.navigateByUrl(`/products`);
+    }
+
   }
   /*openDialog() {
     const dialogRef = this.dialog.open('./login.component.html');

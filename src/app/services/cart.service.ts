@@ -9,7 +9,7 @@ import {CartHelper} from '../classes/cart-helper';
 })
 export class CartService {
   private baseUrl = 'http://localhost:8086/cart';
-  private baseUrl1 = 'http://localhost:1115/cart';
+  private baseUrl1 = 'http://localhost:8085/cart';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -17,8 +17,8 @@ export class CartService {
   //  return this.httpClient.get(`${this.baseUrl}/${customerUserName}`);
   // }
 
-  getCartByName(customerUserName: string): Observable<Cart> {
-    const cartUrl = `${this.baseUrl}/${customerUserName}`;
+  getCartByName(customerUserName: string): Observable<any> {
+    const cartUrl = `${this.baseUrl}?userName=${customerUserName}`;
     return this.httpClient.get<Cart>(cartUrl);
   }
 

@@ -9,7 +9,7 @@ import {Order} from '../classes/order';
 })
 export class OrderService {
 
-  private baseUrl = 'http://localhost:1115/orders';
+  private baseUrl = 'http://localhost:8086/orders';
   private baseUrlGet = 'http://localhost:8086/ordersByUserName';
 
   constructor(private httpClient: HttpClient) { }
@@ -22,4 +22,7 @@ export class OrderService {
     return this.httpClient.get<Order[]>(`${this.baseUrlGet}/${username}`);
   }
 
+  getAllOrders(): Observable<any> {
+    return this.httpClient.get<any>('http://localhost:8086/all-orders');
+  }
 }

@@ -24,14 +24,17 @@
     <hr>
     <!-- Section: Condition -->
     <section class="mb-4">
+      <div class="form-check pl-0 mb-3">
+      <a style="color: black !important;" routerLink="/products"
+         routerLinkActive="active-link">All</a>
+      </div>
       <div class="form-check pl-0 mb-3" *ngFor="let tempProductCategory of productCategories">
-        <div>
-          <a class="text-black-50" routerLink="/products/category/{{tempProductCategory.id}}" routerLinkActive="active-link">
-            {{ tempProductCategory.categoryName }}
+          <a style="color: black !important;" routerLink="/products/category/{{tempProductCategory.id}}"
+             routerLinkActive="active-link">
+            {{ tempProductCategory.productCategoryName }}
           </a>
           <!--<input type="radio" class="form-check-input filled-in"/>{{tempProductCategory.productCategoryName}}-->
           <!--<label class="form-check-label small text-uppercase card-link-secondary" for="new">{{tempProductCategory.productCategoryName}}</label>-->
-        </div>
       </div>
     </section>
     <!-- Section: Condition -->

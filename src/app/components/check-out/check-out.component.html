@@ -17,12 +17,12 @@
             <h6 class="my-0">{{ tempProduct.productName }} ({{ tempProduct.quantity }})</h6>
           </div>
         </li>-->
-        <li class="list-group-item d-flex justify-content-between">
+        <li class="list-group-item d-flex justify-content-between" >
           <!--<small class="text-muted">Product Price</small>-->
           <div>
-            <h6 class="my-0">{{ tempProduct.productName }}</h6>
+            <h6 class="my-0 d-inline-block text-truncate" style="max-width: 150px;">{{tempProduct.productName}}</h6>
           </div>
-          <span class="text-center">{{tempProduct.productPrice | currency: 'INR' }} x {{tempProduct.quantity}}</span>
+          <span class="text-center"> x {{tempProduct.quantity}}</span>
           <strong class="text-muted">{{ tempProduct.productPrice | currency: 'INR' }}</strong>
         </li>
 
@@ -31,13 +31,7 @@
           <strong>{{tempProduct.quantity * tempProduct.productPrice | currency: 'INR' }}</strong>
         </li>-->
 
-        <!--<li class="list-group-item d-flex justify-content-between bg-light">
-          <div class="text-success">
-            <h6 class="my-0">Promo code</h6>
-            <small>DHAMAKA500</small>
-          </div>
-          <span class="text-success">-$5</span>
-        </li>-->
+
       </ul>
       <li class="list-group-item d-flex justify-content-between">
         <span>Total Amount</span>
@@ -45,174 +39,108 @@
       </li>
 
 
-      <form class="card p-2">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Promo code">
-          <div class="input-group-append">
-            <button type="submit" class="btn btn-secondary">Redeem</button>
-          </div>
-        </div>
-      </form>
     </div>
     <div class="col-md-8 order-md-1">
       <h4 class="mb-3">Billing address</h4>
-      <div [hidden]="submitted" style="width: 90%;">
-        <!--class="needs-validation"-->
-      <form class="needs-validation" novalidate (ngSubmit)="onSubmit()">
-        <div class="row">
+
+      <form  [formGroup]="myForm" (ngSubmit)=" !checkoutform.invalid && onSubmit()" #checkoutform="ngForm">
+        <div class="form-group">
           <div class="col-md-6 mb-3">
-            <label for="firstName">First name</label>
-            <input type="text" class="form-control" id="firstName" placeholder="" value="" required [(ngModel)]="objCheckout.firstName" name="firstName">
-            <div class="invalid-feedback">
-              Valid first name is required.
-            </div>
+            <label for="firstName" class="control-label required">First Name <span style="color: darkred">*</span></label>
+            <input type="text" id="firstName" class="form-control"[(ngModel)]="objCheckout.firstName" formControlName="firstName" name="firstName">
           </div>
           <div class="col-md-6 mb-3">
-            <label for="lastName">Last name</label>
-            <input type="text" class="form-control" id="lastName" placeholder="" value="" required [(ngModel)]="objCheckout.lastName" name="lastName">
-            <div class="invalid-feedback">
-              Valid last name is required.
-            </div>
+            <label for="lastName" class="control-label required">Last Name <span style="color: darkred">*</span></label>
+            <input type="text" id="lastName" class="form-control"[(ngModel)]="objCheckout.lastName" formControlName="lastName" name="lastName">
           </div>
         </div>
 
-        <!--<div class="mb-3">
-          <label for="username">Username</label>
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text">@</span>
-            </div>
-            <input type="text" class="form-control" id="username" placeholder="Username" required [(ngModel)]="customerUserName">
-            <div class="invalid-feedback" style="width: 100%;">
-              Your username is required.
-            </div>
-          </div>
-        </div>-->
-
-        <div class="mb-3">
-          <label for="email">Email</label>
-          <input type="email" class="form-control" id="email" placeholder="you@example.com" readonly [(ngModel)]="customerUserName" name="email">
-          <!--<div class="invalid-feedback">
-            Please enter a valid email address for shipping updates.
-          </div>-->
-        </div>
-
-        <div class="mb-3">
-          <label for="mobileNo">Mobile No</label>
-          <input type="text" class="form-control" id="mobileNo" placeholder="+917896541230" required [(ngModel)]="objCheckout.phoneNo" name="mobileNo">
-          <div class="invalid-feedback">
-            Please enter a valid mobile number.
+        <div class="form-group">
+          <div class="mb-3">
+            <label for="email" class="control-label required">Email <span style="color: darkred">*</span></label>
+            <input type="text" id="email" class="form-control"[(ngModel)]="username" formControlName="email">
           </div>
         </div>
 
-        <div class="mb-3">
-          <label for="address">Address Line 1</label>
-          <input type="text" class="form-control" id="address" placeholder="1234 Main St" required [(ngModel)]="objCheckout.addressLine1" name="address">
-          <div class="invalid-feedback">
-            Please enter your shipping address.
+        <div class="form-group">
+          <div class="mb-3">
+            <label for="phoneNo" class="control-label required">Mobile No. <span style="color: darkred">*</span></label>
+            <input type="text" id="phoneNo" class="form-control" [(ngModel)]="objCheckout.phoneNo" formControlName="phoneNo" name="phoneNo">
           </div>
         </div>
 
-        <div class="mb-3">
-          <label for="address2">Address Line 2<span class="text-muted">(Optional)</span></label>
-          <input type="text" class="form-control" id="address2" placeholder="Apartment or suite" required [(ngModel)]="objCheckout.addressLine2" name="address2">
+
+        <div class="form-group">
+          <div class="mb-3">
+            <label for="addressLine1" class="control-label required">Address Line 1 <span
+              style="color: darkred">*</span></label>
+            <input type="text" id="addressLine1" class="form-control" [(ngModel)]="objCheckout.addressLine1"
+                   formControlName="addressLine1">
+
+          </div>
         </div>
+
+        <div class="form-group">
+          <div class="mb-3">
+            <label for="addressLine2" class="control-label required">Address Line 2 <span style="color: grey">(Optional)</span></label>
+            <input type="text" id="addressLine2" class="form-control" [(ngModel)]="objCheckout.addressLine2"
+                   formControlName="addressLine2">
+          </div>
+        </div>
+
 
         <div class="row">
-          <div class="col-md-3 mb-3">
-            <label for="country">Country</label>
-            <select class="custom-select d-block w-100" id="country" required [(ngModel)]="objCheckout.country" name="country">
-              <!-- -->
-              <option value="">Choose...</option>
-              <option>India</option>
-            </select>
-            <div class="invalid-feedback">
-              Please select a valid country.
-            </div>
-          </div>
-          <div class="col-md-3 mb-3">
-            <label for="state">State</label>
-            <select class="custom-select d-block w-100" id="state" required [(ngModel)]="objCheckout.state" name="state">
-              <option value="">Choose...</option>
-              <option>Nagaland</option>
-            </select>
-            <div class="invalid-feedback">
-              Please provide a valid state.
-            </div>
-          </div>
-          <div class="col-md-3 mb-3">
-            <label for="city">City</label>
-            <select class="custom-select d-block w-100" id="city" required [(ngModel)]="objCheckout.city" name="city">
-              <option value="">Choose...</option>
-              <option>Kohima</option>
-              <option>Dimapur</option>
-              <option>Mokochung</option>
-              <option>Wokha</option>
-            </select>
-            <div class="invalid-feedback">
-              Please provide a valid city.
-            </div>
-          </div>
-          <div class="col-md-3 mb-3">
-            <label for="zip">Zip</label>
-            <input type="text" class="form-control" id="zip" placeholder="" required [(ngModel)]="objCheckout.zipCode" name="zip">
-            <div class="invalid-feedback">
-              Zip code required.
-            </div>
-          </div>
-        </div>
-        <hr class="mb-4">
-        <div class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input" id="same-address">
-          <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
-        </div>
-        <div class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input" id="save-info">
-          <label class="custom-control-label" for="save-info">Save this information for next time</label>
-        </div>
-        <hr class="mb-4">
 
+          <div class="form-group">
+            <div class="col-md-3 mb-3">
+              <label for="country" class="control-label required">Country <span style="color: darkred">*</span></label>
+              <select class="custom-select d-block w-100" id="country" class="form-control"
+                      [(ngModel)]="objCheckout.country" formControlName="country">
+                <option value="">Choose...</option>
+                <option>India</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-3 mb-3">
+              <label for="state" class="control-label required">State <span style="color: darkred">*</span></label>
+              <select class="custom-select d-block w-100" id="state" class="form-control" [(ngModel)]="objCheckout.state"
+                      formControlName="state">
+                <option value="">Choose...</option>
+                <option>Nagaland</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-3 mb-3">
+              <label for="city" class="control-label required">City <span style="color: darkred">*</span></label>
+              <select class="custom-select d-block w-100" id="city" class="form-control" [(ngModel)]="objCheckout.city"
+                      formControlName="city">
+                <option value="">Choose...</option>
+                <option>Kohima</option>
+                <option>Dimapur</option>
+                <option>Mokochung</option>
+                <option>Wokha</option>
+              </select>
+
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-3 mb-3">
+              <label for="zipCode" class="control-label required">Zip Code <span style="color: darkred">*</span></label>
+              <input type="text" id="zipCode" class="form-control" [(ngModel)]="objCheckout.zipCode"
+                     formControlName="zipCode">
+
+            </div>
+
+          </div>
+
+        </div>
         <hr class="mb-4">
-        <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+        <button class="btn btn-primary btn-lg btn-block mb-5" type="submit" routerLink="/payment-gateway/{{username}}">Proceed to Payment</button>
+
       </form>
-    </div>
-     <!--<div [hidden]="!submitted">
-      <h4>Form has been submitted successfully!</h4>-->
-        <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
-     <!-- </div>-->
     </div>
   </div>
 </div>
-
 <app-footer></app-footer>
-
-<!-- Bootstrap core JavaScript
-   ================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<!--<script src="assets/js/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="assets/js/jquery-slim.min.js"><\/script>')</script>
-<script src="assets/js/popper.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/holder.min.js"></script>
-<script>
-  // Example starter JavaScript for disabling form submissions if there are invalid fields
-  (function() {
-    'use strict';
-
-    window.addEventListener('load', function() {
-      // Fetch all the forms we want to apply custom Bootstrap validation styles to
-      var forms = document.getElementsByClassName('needs-validation');
-
-      // Loop over them and prevent submission
-      var validation = Array.prototype.filter.call(forms, function(form) {
-        form.addEventListener('submit', function(event) {
-          if (form.checkValidity() === false) {
-            event.preventDefault();
-            event.stopPropagation();
-          }
-          form.classList.add('was-validated');
-        }, false);
-      });
-    }, false);
-  })();
-</script>-->

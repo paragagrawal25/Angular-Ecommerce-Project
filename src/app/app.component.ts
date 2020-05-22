@@ -1,6 +1,4 @@
-import {Component} from '@angular/core';
-import {FormControl, Validators} from '@angular/forms';
-import {User} from './classes/user';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-root',
