@@ -34,6 +34,7 @@ import {LogoutComponent} from './components/logout/logout.component';
 import {MyOrdersComponent} from './components/my-orders/my-orders.component';
 import {ContactUsComponent} from './components/contact-us/contact-us.component';
 import {PaymentGatewayComponent} from './components/payment-gateway/payment-gateway.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
@@ -96,6 +97,7 @@ const routes: Routes = [
     HttpClientModule,
     MatButtonModule,
     ReactiveFormsModule,
+    NgbModule,
   ],
   exports: [
     MatDialogModule

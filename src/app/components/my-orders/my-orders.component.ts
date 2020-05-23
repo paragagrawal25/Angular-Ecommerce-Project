@@ -10,7 +10,7 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./my-orders.component.css']
 })
 export class MyOrdersComponent implements OnInit {
-  orderArr: Order[];
+  orderArr: Order;
   id: number;
   objShippingDetails: ShippingDetails;
   username: string;

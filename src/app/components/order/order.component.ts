@@ -29,5 +29,4 @@ export class OrderComponent implements OnInit {
       queryParams: {data: id}
     });
   }
-
 }

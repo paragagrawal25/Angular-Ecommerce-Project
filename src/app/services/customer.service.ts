@@ -13,7 +13,7 @@ export class CustomerService {
   }
 
   getCustomer(userName: string): Observable<any> {
-    return this.httpClient.get(`${this.baseUrl}/${userName}`);
+    return this.httpClient.get(`${this.baseUrl}?username=${userName}`);
   }
 
   registerCustomer(customer: Object): Observable<Object> {
@@ -24,7 +24,7 @@ export class CustomerService {
     return this.httpClient.delete(`${this.baseUrl}/${userName}`, {responseType: 'text'});
   }
 
-  updateCustomer(userName: string, value: any): Observable<Object> {
-    return this.httpClient.put(`${this.baseUrl}/${userName}`, value);
+  updateCustomer(userName: string, value: any): Observable<any> {
+    return this.httpClient.put(`${this.baseUrl}?username=${userName}`, value);
   }
 }

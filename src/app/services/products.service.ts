@@ -73,6 +73,12 @@ interface GetResponseProducts {
   _embedded: {
     products: ProductCatalogue[];
   };
+  page: {
+    size: number;
+    totalElements: number;
+    totalPages: number;
+    number: number;
+  };
 }
 
 interface GetResponseProductCategory {

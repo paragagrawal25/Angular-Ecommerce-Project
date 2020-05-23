@@ -94,7 +94,6 @@
 
         <div class="row">
 
-          <div class="form-group">
             <div class="col-md-3 mb-3">
               <label for="country" class="control-label required">Country <span style="color: darkred">*</span></label>
               <select class="custom-select d-block w-100" id="country" class="form-control"
@@ -103,8 +102,6 @@
                 <option>India</option>
               </select>
             </div>
-          </div>
-          <div class="form-group">
             <div class="col-md-3 mb-3">
               <label for="state" class="control-label required">State <span style="color: darkred">*</span></label>
               <select class="custom-select d-block w-100" id="state" class="form-control" [(ngModel)]="objCheckout.state"
@@ -113,8 +110,6 @@
                 <option>Nagaland</option>
               </select>
             </div>
-          </div>
-          <div class="form-group">
             <div class="col-md-3 mb-3">
               <label for="city" class="control-label required">City <span style="color: darkred">*</span></label>
               <select class="custom-select d-block w-100" id="city" class="form-control" [(ngModel)]="objCheckout.city"
@@ -127,15 +122,12 @@
               </select>
 
             </div>
-          </div>
-          <div class="form-group">
+
+
             <div class="col-md-3 mb-3">
               <label for="zipCode" class="control-label required">Zip Code <span style="color: darkred">*</span></label>
               <input type="text" id="zipCode" class="form-control" [(ngModel)]="objCheckout.zipCode"
                      formControlName="zipCode">
-
-            </div>
-
           </div>
 
         </div>

@@ -7,20 +7,22 @@
       class="sr-only" id="toggler" style="background-color: #222222;">Toggle navigation</span><span
       class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse" id="navcol-1" style="width: 623px;">
-      <form class="form-inline mx-auto" id="serachBar">
-        <input  #myInput class="form-control" id="searchInput"
-                placeholder="  Search Products"
-                style="opacity: 0.87;" type="search" (keyup.enter)="findProduct(myInput.value)">
-        <a (click)="findProduct(myInput.value)">
-          <i class="fa fa-search" data-bs-hover-animate="pulse"></i>
-        </a>
-      </form>
+      <ul style="margin-left: 300px; margin-top: 5px;">
+        <form class="form-inline" id="serachBar">
+          <input  #myInput class="form-control" id="searchInput"
+                  placeholder="  Search Products"
+                  style="opacity: 0.87;" type="search" (keyup.enter)="findProduct(myInput.value)">
+          <a (click)="findProduct(myInput.value)">
+            <i class="fa fa-search" data-bs-hover-animate="pulse"></i>
+          </a>
+        </form>
+      </ul>
       <ul class="nav navbar-nav ml-auto"
           style="margin-left: 266px;font-size: 18px;">
         <li class="nav-item" role="presentation"><a class="nav-link active" data-bs-hover-animate="pulse"
-                       routerLink="/profile/{{username}}">My Account</a></li>
-        <li class="nav-item" role="presentation"><a class="nav-link active" data-bs-hover-animate="pulse"
-                                                    routerLink="/my-orders/:username">Wish List</a></li>
+                                                    routerLink="/profile/{{username}}">My Account</a></li>
+        <!--<li class="nav-item" role="presentation"><a class="nav-link active" data-bs-hover-animate="pulse"
+                                                    routerLink="/my-orders/:username">Wish List</a></li>-->
         <li class="nav-item" role="presentation"></li>
         <li class="nav-item" role="presentation"><a class="nav-link active" data-bs-hover-animate="pulse"
                                                     routerLink="/my-orders/{{username}}">My Orders</a></li>
@@ -58,7 +60,7 @@
             Section</a></div>
         </li>-->
         <li class="nav-item" role="presentation"><a class="nav-link active" data-bs-hover-animate="pulse"
-                                     style="color: white" routerLink="/about-us">About Us</a></li>
+                                                    style="color: white" routerLink="/about-us">About Us</a></li>
         <li class="nav-item" role="presentation"><a class="nav-link active" data-bs-hover-animate="pulse"
                                                     style="color: white" routerLink="/contact-us">Contact Us</a></li>
       </ul>
