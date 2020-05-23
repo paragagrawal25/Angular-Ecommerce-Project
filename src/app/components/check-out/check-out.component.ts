@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ShippingDetails} from '../../classes/shipping-details';
 import {Cart} from '../../classes/cart';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
@@ -14,7 +14,6 @@ import {CartService} from '../../services/cart.service';
 export class CheckOutComponent implements OnInit {
 
   objCheckout: ShippingDetails = new ShippingDetails();
-  submitted = false;
   objCart: Cart;
   myForm: FormGroup;
   username: string;
@@ -26,7 +25,6 @@ export class CheckOutComponent implements OnInit {
     this.username = sessionStorage.getItem('username');
     this.getCart();
     this.myForm = this.formBuilder.group({
-
       firstName: [null, [Validators.required, Validators.maxLength(15), Validators.minLength(2)]],
       lastName: [null, [Validators.required, Validators.maxLength(15), Validators.minLength(2)]],
       customerUserName: [null, [Validators.required, Validators.email]],
@@ -41,16 +39,7 @@ export class CheckOutComponent implements OnInit {
   }
 
   onSubmit() {
-    this.save();
     alert('SUCCESS!! :-)');
-  }
-
-
-  save() {
-    this.objCheckout.email = this.username;
-    this.orderService.createShippingDetails(this.objCheckout, this.username)
-      .subscribe(data => console.log(data), error => console.log(error));
-    this.objCheckout = new ShippingDetails();
   }
 
   getCart() {
@@ -59,5 +48,12 @@ export class CheckOutComponent implements OnInit {
       this.objCart = data;
     });
     console.log(this.objCart);
+  }
+
+  passData(){
+    this.username = sessionStorage.getItem('username');
+    this.router.navigate([`/payment-gateway/${this.username}`], {
+      queryParams: {data: btoa(JSON.stringify(this.objCheckout))}
+      });
   }
 }

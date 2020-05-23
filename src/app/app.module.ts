@@ -30,33 +30,33 @@ import {AdminPanelComponent} from './components/profile-page/admin-panel/admin-p
 import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
 import {AuthGuardService} from './services/auth-guard.service';
-import { LogoutComponent } from './components/logout/logout.component';
+import {LogoutComponent} from './components/logout/logout.component';
 import {MyOrdersComponent} from './components/my-orders/my-orders.component';
-import { ContactUsComponent } from './components/contact-us/contact-us.component';
-import { PaymentGatewayComponent } from './components/payment-gateway/payment-gateway.component';
+import {ContactUsComponent} from './components/contact-us/contact-us.component';
+import {PaymentGatewayComponent} from './components/payment-gateway/payment-gateway.component';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'home-page', component: HomePageComponent},
+  {path: 'products', component: ProductsComponent},
+  {path: 'products/product-details/:id', component: ProductDetailsComponent},
+  {path: 'products/category/:id', component: ProductsComponent},
+  {path: 'search-products/:searchKeyword', component: ProductsComponent},
   {path: 'profile/:userName', component: ProfilePageComponent, canActivate: [AuthGuardService]},
   {path: 'cart/:username', component: CartComponent, canActivate: [AuthGuardService]},
   {path: 'checkout/:username', component: CheckOutComponent, canActivate: [AuthGuardService]},
   {path: 'payment-gateway/:username', component: PaymentGatewayComponent, canActivate: [AuthGuardService]},
   {path: 'my-orders/:username', component: OrderComponent, canActivate: [AuthGuardService]},
   {path: 'my-orders-detail/:username', component: MyOrdersComponent, canActivate: [AuthGuardService]},
-  {path: 'products/product-details/:id', component: ProductDetailsComponent},
-  {path: 'products', component: ProductsComponent},
-  {path: 'products/category/:id', component: ProductsComponent},
-  {path: 'search-products/:searchKeyword', component: ProductsComponent},
   {path: 'about-us', component: AboutUsComponent},
   {path: 'orders', component: OrdersComponent, canActivate: [AuthGuardService]},
   {path: 'admin-page', component: AdminPanelComponent},
   {path: 'contact-us', component: ContactUsComponent},
   {path: 'logout', component: LogoutComponent},
 
-  { path: '**', component: HomePageComponent}
+  {path: '**', component: HomePageComponent}
 ];
 
 @NgModule({
@@ -95,7 +95,7 @@ const routes: Routes = [
     FormsModule,
     HttpClientModule,
     MatButtonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   exports: [
     MatDialogModule

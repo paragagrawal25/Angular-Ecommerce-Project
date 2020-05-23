@@ -44,7 +44,9 @@
       <h4 class="mb-3">Billing address</h4>
 
       <form  [formGroup]="myForm" (ngSubmit)=" !checkoutform.invalid && onSubmit()" #checkoutform="ngForm">
+
         <div class="form-group">
+          <div class="row">
           <div class="col-md-6 mb-3">
             <label for="firstName" class="control-label required">First Name <span style="color: darkred">*</span></label>
             <input type="text" id="firstName" class="form-control"[(ngModel)]="objCheckout.firstName" formControlName="firstName" name="firstName">
@@ -54,11 +56,12 @@
             <input type="text" id="lastName" class="form-control"[(ngModel)]="objCheckout.lastName" formControlName="lastName" name="lastName">
           </div>
         </div>
+        </div>
 
         <div class="form-group">
           <div class="mb-3">
-            <label for="email" class="control-label required">Email <span style="color: darkred">*</span></label>
-            <input type="text" id="email" class="form-control"[(ngModel)]="username" formControlName="email">
+            <label for="customerUserName" class="control-label required">Email <span style="color: darkred">*</span></label>
+            <input type="text" id="customerUserName" class="form-control" [(ngModel)]="username" readonly formControlName="customerUserName">
           </div>
         </div>
 
@@ -137,8 +140,8 @@
 
         </div>
         <hr class="mb-4">
-        <button class="btn btn-primary btn-lg btn-block mb-5" type="submit" routerLink="/payment-gateway/{{username}}">Proceed to Payment</button>
-
+        <button class="btn btn-primary btn-lg btn-block mb-5" type="submit" [disabled]="!myForm.valid"
+                (click)="passData()">Proceed to Payment</button>
       </form>
     </div>
   </div>

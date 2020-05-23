@@ -1,26 +1,26 @@
 <app-header></app-header>
 
-<div class="container-fluid" style="background-color: #F2F3F7">
-  <div class="container" style="padding-top: 30px;">
+<div class="container-fluid" style="background-color: #F2F3F7; padding-bottom: 20px;">
+  <div class="container" style="padding-top: 30px; padding-bottom: 20px;">
 
     <div class="card header_card">
       <div class="card-body">
 
         <div class="row">
 
-          <div class="col-md-6">
+          <div class="col-md-6 pl-5 pt-2">
 
             <h5>Delivery Address</h5>
 
-            <p class="name">{{ orderArr[0].customerUserName }}</p>
+            <p class="name">{{ orderArr.customerUserName }}</p>
             <!--<p class="name">{{ objCustomer.name }}</p>-->
 
-            <p class="address">{{ orderArr[0].address.addressLine1}}<br>
-              {{ orderArr[0].address.addressLine2 }}</p>
+            <p class="address">{{ orderArr.address.addressLine1}}<br>
+              {{ orderArr.address.addressLine2 }}</p>
 
             <span class="name">Phone No.</span><br>
             <!---<span class="address">{{ objOrder[0].address.phoneNo }}</span>-->
-            <span class="address">9501093335</span>
+            <span class="address">{{orderArr.address.phoneNo}}</span>
 
           </div>
 
@@ -37,25 +37,25 @@
 
   <!--  Orders-->
   <div class="container" style="padding-top: 30px">
-    <div class="card product_card" *ngFor="let tempOrder of orderArr">
-      <div *ngFor="let tempProduct of tempOrder.product">
+    <div class="card product_card" *ngFor="let tempOrder of orderArr.product">
+      <div>
           <div class="row">
 
-          <div class="col-md-1 text-right" >
-            <img class="product-image" src="https://rukminim1.flixcart.com/image/416/416/jzsqky80/perfume/a/n/d/100-forest-spice-100ml-eau-de-parfume-for-men-eau-de-parfum-wild-original-imafjqhu7qzqrubg.jpeg?q=70">
+          <div class="col-md-2 text-center" >
+            <img class="product-image" src="{{tempOrder.productImageUrl}}">
             <!--<img class="product-image" src="{{  }}>-->
           </div>
 
           <div class="col-md-3">
 
-            <span class="product-name" style="font-weight: bold">{{ tempProduct.productName }}</span>
+            <span class="product-name" style="font-weight: bold">{{ tempOrder.productName }}</span>
 
-            <h5 style="padding-top: 30px; font-weight: bold">{{ tempProduct.productPrice | currency: 'INR' }}</h5>
+            <h5 style="padding-top: 30px; font-weight: bold">{{ tempOrder.productPrice | currency: 'INR' }}</h5>
           </div>
 
-          <div class="col-md-8 text-center">
+          <div class="col-md-7 text-center">
 
-            <span class="badge badge-success status">{{ tempOrder.orderStatus}} on {{ tempOrder.orderDate }}</span>
+            <span class="badge badge-success status">{{ orderArr.orderStatus}} on {{ orderArr.orderDate }}</span>
           </div>
 
           </div>

@@ -15,13 +15,13 @@
                 <div class="col-lg-6 col-12">
                   <div class="form-group">
                     <label>Your Name<span>*</span></label>
-                    <input name="name" type="text" placeholder="Your Name">
+                    <input name="name" #name ng-control="name" required id="name" type="text" placeholder="Your Name">
                   </div>
                 </div>
                 <div class="col-lg-6 col-12">
                   <div class="form-group">
                     <label>Your Subjects<span>*</span></label>
-                    <input name="subject" type="text" placeholder="Subject">
+                    <input name="subject" #subject ng-control="subject" required id="subject" type="text" placeholder="Subject">
                   </div>
                 </div>
                 <div class="col-lg-6 col-12">
@@ -33,19 +33,28 @@
                 <div class="col-lg-6 col-12">
                   <div class="form-group">
                     <label>Your Phone<span>*</span></label>
-                    <input name="company_name" type="text" placeholder="Ex - +91 9999900000">
+                    <input name="phoneNo" #phoneNo ng-control="phoneNo" required id="phoneNo" type="tel" placeholder="Ex - +91 9999900000">
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-group message">
                     <label>your message<span>*</span></label>
-                    <textarea name="message" placeholder="Your message goes here"></textarea>
+                    <textarea name="message" #message ng-control="message" required id="message" placeholder="Your message goes here"></textarea>
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-group button">
-                    <button type="submit" class="btn" >Send Message</button><!--(click)="sendEmail(email.value)"-->
+                    <button type="submit" class="btn" (click)="sendEmail(
+                                            name.value,
+                                            email.value,
+                                            phoneNo.valueAsNumber,
+                                            subject.value,
+                                            message.value
+                                            )">Send Message</button>
                   </div>
+                </div>
+                <div class="alert alert-success">
+                  <strong>Success!</strong> Indicates a successful or positive action.
                 </div>
               </div>
             </form>

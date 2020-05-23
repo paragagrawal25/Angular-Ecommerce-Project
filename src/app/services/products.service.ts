@@ -23,7 +23,7 @@ export class ProductsService {
     return this.httpClient.post(`${this.productAddUrl}`, product, {responseType: 'text'});
   }
 
-  getProduct(theProductId: number): Observable<ProductCatalogue> {
+  getProduct(theProductId: number): Observable<any> {
     // need to build URL based on product id
     const productUrl = `${this.baseUrl}/${theProductId}`;
 

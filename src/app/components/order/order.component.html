@@ -1,25 +1,25 @@
 <app-header></app-header>
 
-<div class="col-md-12" style="margin-top: 50px;">
-  <h6 class="display-4 block_heading text-center">My Orders</h6>
-  <h6 class="lead text-center">{{ objOrder.length }}</h6>
+<div class="col-md-12" style="margin-top: 40px;">
+  <h6 class="display-4 block_heading text-center pb-2">Hi <strong>{{username}}</strong>! Your Orders</h6>
 
-  <div class="container" >
+  <div class="container">
 
-    <div class="card order_cards" >
+    <div class="card order_cards">
       <div class="card-body" *ngFor="let tempOrder of objOrder">
-        <div class="row">
+        <div class="row pl-3 pr-3 mt-n3">
 
           <div class="col-md-6">
             <h6 class="display-4 card_heading">{{ tempOrder.orderId }}</h6><br>
-            <a routerLink="/my-orders-detail/{{username}}" class="view_order">View Order <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+            <a (click)="passId(tempOrder.orderId)" class="view_order">View Order <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
           </div>
 
           <div class="col-md-6 text-right">
-            <h5 class="display-4 card_heading"><span class="badge badge-danger">{{ tempOrder.orderStatus }}</span></h5>
+            <h5 class="display-4 card_heading"><span class="badge badge-success">{{ tempOrder.orderStatus }}</span></h5>
           </div>
 
         </div>
+        <hr>
       </div>
     </div>
   </div>

@@ -3,7 +3,9 @@
 }
 
 .product_card{
-  height: 150px;
+  padding: 30px;
+  height: auto;
+  margin-bottom: 20px;
 }
 
 .header_card h5{
@@ -42,7 +44,7 @@
   width: auto;
   text-align: center;
   padding-top: 6px;
-  margin-top: 30px;
+  float: right;
 }
 
 

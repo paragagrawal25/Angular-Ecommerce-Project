@@ -5,6 +5,9 @@ import {ProductCatalogue} from '../../classes/product-catalogue';
 import {Cart} from '../../classes/cart';
 import {CartService} from '../../services/cart.service';
 import {CartHelper} from '../../classes/cart-helper';
+import {MatDialog} from '@angular/material/dialog';
+import Swal from 'sweetalert2';
+import {AuthenticationService} from "../../services/authentication.service";
 
 @Component({
   selector: 'app-product-details',
@@ -21,7 +24,8 @@ export class ProductDetailsComponent implements OnInit {
   constructor(private productService: ProductsService,
               private route: ActivatedRoute,
               private cartService: CartService,
-              private router: Router) {
+              private router: Router,
+              private authenticationService: AuthenticationService) {
   }
 
   ngOnInit(): void {
@@ -44,20 +48,39 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   handleCartObjects(){
-    this.initializeCartHelper();
-    // console.log(this.cartHelper);
-    this.cartService.addCart(this.cartHelper)
-      .subscribe(data => console.log(data), error => console.log(error));
-    alert('Your item has been successfully added to Cart');
-    // this.router.navigateByUrl(`/cart/${this.username}`);
+    if (this.authenticationService.isUserLoggedIn()) {
+      this.initializeCartHelper();
+      // console.log(this.cartHelper);
+      this.cartService.addCart(this.cartHelper)
+        .subscribe(data => console.log(data), error => console.log(error));
+      this.showSuccessAlert();
+    }
+    else {
+      this.showErrorAlert();
+    }
   }
+
+  showSuccessAlert() {
+    Swal.fire('Added Successfully!!', 'Item has been successfully added to cart!', 'success');
+  }
+
+  showErrorAlert(){
+    Swal.fire({
+      title: '<strong>You are not logged in</strong>',
+      padding: '5em',
+      icon: 'warning',
+      html:
+        'To add the product into cart , ' +
+        '<a href="/login">Login first</a> ',
+      showConfirmButton: false
+    });
+  }
+
 
   handleBuyNowObjects(){
     this.initializeCartHelper();
-    // console.log(this.cartHelper);
     this.cartService.addCart(this.cartHelper)
       .subscribe(data => console.log(data), error => console.log(error));
-    // this.router.navigateByUrl(`/cart/${this.username}`);
   }
 
   initializeCartHelper(){

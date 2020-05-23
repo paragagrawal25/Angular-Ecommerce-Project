@@ -26,4 +26,9 @@ export class CartService {
     console.log(cart);
     return this.httpClient.post(`${this.baseUrl1}`, cart);
   }
+
+  updateCart(cart: CartHelper): Observable<any> {
+    console.log(cart);
+    return this.httpClient.put(`${this.baseUrl1}`, cart, {responseType: 'text'});
+  }
 }

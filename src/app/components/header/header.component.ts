@@ -14,9 +14,10 @@ import {CartService} from '../../services/cart.service';
 })
 export class HeaderComponent implements OnInit {
 
-  isUserLoggedIn: boolean = false;
+  isUserLoggedIn = false;
   username: string;
   cart: Cart = new Cart();
+  cartBadge: Cart;
 
   constructor(private authenticationService: AuthenticationService,
               private router: Router,
@@ -25,19 +26,24 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.isUserLoggedIn = this.authenticationService.isUserLoggedIn();
     console.log(this.isUserLoggedIn);
+    // this.getBadgeCount();
     this.username = sessionStorage.getItem('username');
     // this.getCart();
+  }
+
+  getBadgeCount() {
+    this.username = sessionStorage.getItem('username');
+    this.cartService.getCartByName(this.username).subscribe( data => {
+      this.cartBadge = data; this.getCart(this.cartBadge);
+    });
   }
 
   showAcc(username: string) {
     this.router.navigate(['profile', username]);
   }
 
-  getCart(){
-    this.username = sessionStorage.getItem('username');
-    this.cartService.getCartByName(this.username).subscribe( data => {
-      this.cart = data;
-    });
+  getCart(cart1: Cart){
+    return cart1.productList.length;
   }
 
   findProduct(searchKeyword: string) {

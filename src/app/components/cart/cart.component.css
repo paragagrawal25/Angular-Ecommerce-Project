@@ -1,8 +1,8 @@
 
 body {
   background: #D3CCE3;
-  background: -webkit-linear-gradient(to right, #D3CCE3, #fffcdc);
-  background: linear-gradient(to right, #D3CCE3, #fffcdc);
+  /*background: -webkit-linear-gradient(to right, #D3CCE3, #fffcdc);
+  background: linear-gradient(to right, #D3CCE3, #fffcdc);*/
   min-height: 100vh;
 }
 
