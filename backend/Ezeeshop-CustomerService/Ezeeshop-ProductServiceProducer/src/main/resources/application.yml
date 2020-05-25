@@ -1,0 +1,24 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: product-service-producer
+  boot:
+    admin:
+      client:
+        url: http://localhost:9999
+  cloud:
+    consul:
+      discovery:
+        register: true
+        service-name: product-service-producer
+      host: localhost
+      port: 8500
+  rabbitmq:
+    host: localhost
+    password: guest
+    port: 5672
+    username: guest     
+
+ 
+  
