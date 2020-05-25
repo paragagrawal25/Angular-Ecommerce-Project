@@ -1,0 +1,29 @@
+server:
+  port: 8086
+spring:
+  cloud:
+    consul:
+      discovery:
+        register: true
+        service-name: order-consumer-service
+      host: localhost
+      port: 8500
+  boot:
+    admin:
+      client:
+        url: http://localhost:9999
+  application:
+    name: order-consumer-service
+      jpa:    show-sql: true    hibernate:      ddl-auto: update
+    
+  rabbitmq:
+   host: localhost
+   password: guest
+   port: 5672
+   username: guest
+    
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ezeeshop_db
+    username: root
+    password: admin123@
