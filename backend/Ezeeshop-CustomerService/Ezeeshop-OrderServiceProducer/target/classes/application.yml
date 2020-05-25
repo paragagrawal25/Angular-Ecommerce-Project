@@ -1,0 +1,20 @@
+server:
+  port: 8085
+spring:
+  cloud:
+    consul:
+      discovery:
+        register: true
+        service-name: order-producer-service
+      host: localhost
+      port: 8500
+  
+  application:
+    name: order-producer-service
+    
+    
+  rabbitmq:
+    host: localhost
+    password: guest
+    port: 5672
+    username: guest
